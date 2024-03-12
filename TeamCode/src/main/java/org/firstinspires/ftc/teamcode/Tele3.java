@@ -95,14 +95,17 @@ public class Tele3 extends LinearOpMode {
                 hardware.leftSlide.setPower(1);
                 hardware.rightSlide.setPower(1);
                 armdelay.reset();
-                teem = armdelay.time(TimeUnit.SECONDS);
                 hardware.boxRotation.setPosition(0);
             }
-            if (teem > 0.5){
+
+            if (armdelay.time(TimeUnit.MILLISECONDS) > 500){
                 hardware.leftSlide.setPower(0);
                 hardware.rightSlide.setPower(0);
                 teem = 0;
             }
+
+
+            telemetry.addData("timeinms", (armdelay.time(TimeUnit.MILLISECONDS)));
 
             if (gamepad2.x) {
                 hardware.door.setPosition(0);
@@ -180,8 +183,8 @@ public class Tele3 extends LinearOpMode {
             }
 
             telemetry.addData("Stopwatch timer: ", myStopwatch.time(TimeUnit.SECONDS));
-            telemetry.addData("arm delay timer: ", armdelay.time(TimeUnit.SECONDS));
-            telemetry.addData("Stopwatch timer variable: ", teem);
+//            telemetry.addData("arm delay timer: ", armdelay.time(TimeUnit.SECONDS));
+//            telemetry.addData("Stopwatch timer variable: ", teem);
 
             telemetry.update();
         }
