@@ -34,13 +34,13 @@ public class Hardware {
 
     public IMU imu;
 
-    RevBlinkinLedDriver blinkinLedDriver;
-    RevBlinkinLedDriver.BlinkinPattern black;
+//    RevBlinkinLedDriver blinkinLedDriver;
+//    RevBlinkinLedDriver.BlinkinPattern black;
 
     public Hardware(HardwareMap hardwareMap) {
-        blinkinLedDriver = hardwareMap.get(RevBlinkinLedDriver.class, "blinkin");
-        black = RevBlinkinLedDriver.BlinkinPattern.BLACK;
-        blinkinLedDriver.setPattern(black);
+        //blinkinLedDriver = hardwareMap.get(RevBlinkinLedDriver.class, "blinkin");
+//        black = RevBlinkinLedDriver.BlinkinPattern.BLACK;
+//        blinkinLedDriver.setPattern(black);
 
         leftFront = hardwareMap.get(DcMotor.class, "2");
         leftRear = hardwareMap.get(DcMotor.class, "0");
@@ -58,8 +58,8 @@ public class Hardware {
         verticalActuator = hardwareMap.get(DcMotor.class, "E2");
         intake = hardwareMap.get(DcMotor.class, "E3");
 
-        leftRear.setDirection(DcMotorSimple.Direction.FORWARD);
-        leftFront.setDirection(DcMotorSimple.Direction.REVERSE);
+        leftRear.setDirection(DcMotorSimple.Direction.REVERSE);
+        leftFront.setDirection(DcMotorSimple.Direction.FORWARD);
         rightRear.setDirection(DcMotorSimple.Direction.REVERSE);
         rightFront.setDirection(DcMotorSimple.Direction.REVERSE);
 
@@ -80,14 +80,15 @@ public class Hardware {
 
         // distance = hardwareMap.get(DistanceSensor.class, "distance");
 
-        bottomSlot = hardwareMap.get(RevColorSensorV3.class, "I2C3");
-        // distance = hardwareMap.get(Rev2mDistanceSensor.class, "I2C1");
-        topSlot = hardwareMap.get(RevColorSensorV3.class, "I2C2");
+        //TODO: uncomment bottomslot and topslot
+        //bottomSlot = hardwareMap.get(RevColorSensorV3.class, "I2C3");
+        //distance = hardwareMap.get(Rev2mDistanceSensor.class, "I2C1");
+        //topSlot = hardwareMap.get(RevColorSensorV3.class, "I2C2");
     }
 
-    public void setLEDs(RevBlinkinLedDriver.BlinkinPattern pattern){
-        blinkinLedDriver.setPattern(pattern);
-    }
+//    public void setLEDs(RevBlinkinLedDriver.BlinkinPattern pattern){
+//        blinkinLedDriver.setPattern(pattern);
+//    }
 
     public Boolean pixelCheck() {
         if (topSlot.getDistance(DistanceUnit.CM) < 2 && bottomSlot.getDistance(DistanceUnit.CM) < 2) {

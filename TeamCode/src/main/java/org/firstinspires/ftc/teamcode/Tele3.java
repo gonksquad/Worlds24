@@ -29,6 +29,7 @@ public class Tele3 extends LinearOpMode {
 
     private double time;
     private double teem;
+    private boolean CanMove = true;
 
     public void runOpMode() {
 
@@ -84,7 +85,7 @@ public class Tele3 extends LinearOpMode {
             if (gamepad2.a) {
                 hardware.door.setPosition(0);
                 hardware.leftSlide.setPower(-0.75);
-                hardware.rightSlide.setPower(-0.75);
+                //hardware.rightSlide.setPower(-0.75);
                 hardware.boxRotation.setPosition(1);
                 hardware.intake.setPower(1);
             }
@@ -93,15 +94,13 @@ public class Tele3 extends LinearOpMode {
                 hardware.door.setPosition(0.25);
                 hardware.intake.setPower(0);
                 hardware.leftSlide.setPower(1);
-                hardware.rightSlide.setPower(1);
+                //hardware.rightSlide.setPower(1);
                 armdelay.reset();
                 hardware.boxRotation.setPosition(0);
+                CanMove = false;
             }
-
             if (armdelay.time(TimeUnit.MILLISECONDS) > 500){
-                hardware.leftSlide.setPower(0);
-                hardware.rightSlide.setPower(0);
-                teem = 0;
+                CanMove = true;
             }
 
 
@@ -116,22 +115,26 @@ public class Tele3 extends LinearOpMode {
             }
             //set powers to pull up hooks
             hardware.verticalActuator.setPower(-(gamepad2.left_stick_y) * 5);
+            hardware.rightSlide.setPower(-(gamepad2.left_stick_y) * 5);
+
 
             telemetry.addData("speed", speed);
 
-            if (gamepad2.right_trigger != 0) {
-                hardware.leftSlide.setPower(0.5);
-                hardware.rightSlide.setPower(0.5);
-            } else if (gamepad2.left_trigger != 0) {
-                hardware.leftSlide.setPower(-0.35);
-                hardware.rightSlide.setPower(-0.35);
-            } else {
-                hardware.leftSlide.setPower(0);
-                hardware.rightSlide.setPower(0);
+            if (CanMove) {
+                if (gamepad2.right_trigger != 0) {
+                    hardware.leftSlide.setPower(0.5);
+                    //hardware.rightSlide.setPower(0.5);
+                } else if (gamepad2.left_trigger != 0) {
+                    hardware.leftSlide.setPower(-0.35);
+                    //hardware.rightSlide.setPower(-0.35);
+                } else {
+                    hardware.leftSlide.setPower(0.15);
+                    //hardware.rightSlide.setPower(0);
+                }
             }
 
             telemetry.addData("leftslidepower", hardware.leftSlide.getPower());
-            telemetry.addData("rightslidepower", hardware.rightSlide.getPower());
+            //telemetry.addData("rightslidepower", hardware.rightSlide.getPower());
 
             // plane
             if (gamepad1.y && gamepad2.y) {
@@ -146,17 +149,20 @@ public class Tele3 extends LinearOpMode {
 
             if (gamepad2.left_bumper) {
                 hardware.verticalActuator.setPower(1);
+                hardware.rightSlide.setPower(1);
             } else if (gamepad2.right_bumper) {
                 hardware.verticalActuator.setPower(-1);
+                hardware.rightSlide.setPower(-1);
                 hardware.intake.setPower(0);
             } else {
                 hardware.verticalActuator.setPower(0);
+                hardware.rightSlide.setPower(0);
             }
 
             numPixels = 0;
 
-            telemetry.addData("TopSlot: ", hardware.topSlot.getDistance(DistanceUnit.CM));
-            telemetry.addData("BottomSlot: ", hardware.bottomSlot.getDistance(DistanceUnit.CM));
+//            telemetry.addData("TopSlot: ", hardware.topSlot.getDistance(DistanceUnit.CM));
+//            telemetry.addData("BottomSlot: ", hardware.bottomSlot.getDistance(DistanceUnit.CM));
 
 //            if (hardware.topSlot.getDistance(DistanceUnit.CM) <= 3.5) {
 //                numPixels += 1;
@@ -168,19 +174,19 @@ public class Tele3 extends LinearOpMode {
 
             time = myStopwatch.time(TimeUnit.SECONDS);
 
-            hardware.setLEDs(RevBlinkinLedDriver.BlinkinPattern.BLACK);
-            if ((time >= 105) && (time <= 110)) {
-                hardware.setLEDs(RevBlinkinLedDriver.BlinkinPattern.RED_ORANGE);
-            }
-            if ((time >= 110) && (time <= 115)) {
-                hardware.setLEDs(RevBlinkinLedDriver.BlinkinPattern.RED);
-            }
-            if ((time >= 115) && (time <= 120)) {
-                hardware.setLEDs(RevBlinkinLedDriver.BlinkinPattern.STROBE_RED);
-            }
-            if ((hardware.bottomSlot.getDistance(DistanceUnit.CM) <= 3.5) && time <= 120) {
-                hardware.setLEDs(RevBlinkinLedDriver.BlinkinPattern.RED);
-            }
+//            hardware.setLEDs(RevBlinkinLedDriver.BlinkinPattern.BLACK);
+//            if ((time >= 105) && (time <= 110)) {
+//                hardware.setLEDs(RevBlinkinLedDriver.BlinkinPattern.RED_ORANGE);
+//            }
+//            if ((time >= 110) && (time <= 115)) {
+//                hardware.setLEDs(RevBlinkinLedDriver.BlinkinPattern.RED);
+//            }
+//            if ((time >= 115) && (time <= 120)) {
+//                hardware.setLEDs(RevBlinkinLedDriver.BlinkinPattern.STROBE_RED);
+//            }
+//            if ((hardware.bottomSlot.getDistance(DistanceUnit.CM) <= 3.5) && time <= 120) {
+//                hardware.setLEDs(RevBlinkinLedDriver.BlinkinPattern.RED);
+//            }
 
             telemetry.addData("Stopwatch timer: ", myStopwatch.time(TimeUnit.SECONDS));
 //            telemetry.addData("arm delay timer: ", armdelay.time(TimeUnit.SECONDS));
@@ -209,13 +215,13 @@ public class Tele3 extends LinearOpMode {
 
     public void slideloop() {
         hardware.leftSlide.setPower(0);
-        hardware.rightSlide.setPower(0);
+        //hardware.rightSlide.setPower(0);
 
         hardware.leftSlide.setPower(gamepad2.right_trigger);
-        hardware.rightSlide.setPower(gamepad2.right_trigger);
+        //hardware.rightSlide.setPower(gamepad2.right_trigger);
 
         hardware.leftSlide.setPower(-gamepad2.left_trigger);
-        hardware.rightSlide.setPower(-gamepad2.left_trigger);
+        //hardware.rightSlide.setPower(-gamepad2.left_trigger);
     }
 
     public void intakeloop() {
