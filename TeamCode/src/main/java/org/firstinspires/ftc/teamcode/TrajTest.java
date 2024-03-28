@@ -1,5 +1,7 @@
 package org.firstinspires.ftc.teamcode;
 
+import static android.os.SystemClock.sleep;
+
 import android.drm.DrmStore;
 
 import com.acmerobotics.roadrunner.Pose2d;
@@ -15,32 +17,37 @@ import org.firstinspires.ftc.teamcode.TankDrive;
 import org.firstinspires.ftc.teamcode.ThreeDeadWheelLocalizer;
 import org.firstinspires.ftc.teamcode.TwoDeadWheelLocalizer;
 
+import org.firstinspires.ftc.teamcode.Hardware;
+
+
 @Autonomous
 public class TrajTest extends LinearOpMode {
-
     @Override
     public void runOpMode() {
         waitForStart();
-        MecanumDrive drive = new MecanumDrive(hardwareMap, new Pose2d(-36, 60, Math.toRadians(270)));
+//        Hardware hardware = new Hardware(hardwareMap);
+        MecanumDrive drive = new MecanumDrive(hardwareMap, new Pose2d(12, 60, Math.toRadians(270)));
         while (opModeIsActive()) {
             Actions.runBlocking(
-                    drive.actionBuilder(new Pose2d(-36, 60, Math.toRadians(270)))
-                            .splineTo(new Vector2d(-33, 36), Math.toRadians(270))
-                            .strafeTo(new Vector2d(-50, 40))
-                            .strafeTo(new Vector2d(-50, 41))
-                            .lineToY(24)
-                            .splineTo(new Vector2d(-12,12), Math.toRadians(0))
-                            .splineTo(new Vector2d(30,12), Math.toRadians(0))
-                            .splineTo(new Vector2d(40,36), Math.toRadians(180))
+                    drive.actionBuilder(new Pose2d(12, 60, Math.toRadians(270)))
+                            .splineTo(new Vector2d(10, 35), Math.toRadians(180))
+                            .waitSeconds(2)
+                            .strafeTo(new Vector2d(40, 35))
+                            .waitSeconds(2)
+                            .strafeTo(new Vector2d(45, 60))
+                            .strafeTo(new Vector2d(60, 60))
                             .build()
             );
-            telemetry.addData("something", " does something");
-            telemetry.update();
-            Actions.runBlocking(
-                    drive.actionBuilder(new Pose2d(40, 36, Math.toRadians(270)))
-                            .strafeTo(new Vector2d(10, 10))
-            );
+//            hardware.leftSlide.setPower(0.75);
+//            hardware.rightSlide.setPower(0.75);
+//            sleep(200);
+//            hardware.boxRotation.setPosition(0);
+//            sleep(500);
+//            hardware.leftSlide.setPower(0);
+//            hardware.rightSlide.setPower(0);
+//            sleep(500);
+//            hardware.door.setPosition(0);
+//            sleep(2000);
         }
     }
 }
-

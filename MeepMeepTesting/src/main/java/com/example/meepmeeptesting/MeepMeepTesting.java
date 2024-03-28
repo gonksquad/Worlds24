@@ -128,13 +128,13 @@ public class MeepMeepTesting {
 //                        .strafeTo(new Vector2d(60, 60))
 
                 //Blue Back-Stage Left  --  StartPose (12, 60, 270 deg)
-//                        .strafeTo(new Vector2d(36, 35))
-//                        .turnTo(Math.toRadians(180))
-//                        .waitSeconds(2)
-//                        .strafeTo(new Vector2d(40, 35))
-//                        .waitSeconds(2)
-//                        .strafeTo(new Vector2d(45, 60))
-//                        .strafeTo(new Vector2d(60, 60))
+                        .strafeTo(new Vector2d(36, 35))
+                        .turnTo(Math.toRadians(180))
+                        .waitSeconds(2)
+                        .strafeTo(new Vector2d(40, 35))
+                        .waitSeconds(2)
+                        .strafeTo(new Vector2d(45, 60))
+                        .strafeTo(new Vector2d(60, 60))
 
 
 
