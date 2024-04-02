@@ -18,7 +18,7 @@ public class MeepMeepTesting {
                 .setConstraints(60, 60, Math.toRadians(180), Math.toRadians(180), 15)
                 .build();
 
-        myBot.runAction(myBot.getDrive().actionBuilder(new Pose2d(12, 60, Math.toRadians(270)))
+        myBot.runAction(myBot.getDrive().actionBuilder(new Pose2d(-36, -60, Math.toRadians(90)))
 
 
                 //Red On-stage Center  --  StartPose (-36, -60, 90 deg)
@@ -31,24 +31,24 @@ public class MeepMeepTesting {
                         .splineTo(new Vector2d(40,-36), Math.toRadians(180))
 
                 //Red On-stage Right  --  StartPose (-36, -60, 90 deg)
-                        .splineTo(new Vector2d(-34, -36), Math.toRadians(0))
-                        .waitSeconds(2)
-                        .strafeTo(new Vector2d(-34, -12))
-                        .strafeTo(new Vector2d(-33.9, -12))
-                        .splineTo(new Vector2d(-12,-12), Math.toRadians(0))
-                        .splineTo(new Vector2d(30,-12), Math.toRadians(0))
-                        .splineTo(new Vector2d(40,-36), Math.toRadians(180))
+//                        .splineTo(new Vector2d(-34, -36), Math.toRadians(0))
+//                        .waitSeconds(2)
+//                        .strafeTo(new Vector2d(-34, -12))
+//                        .strafeTo(new Vector2d(-33.9, -12))
+//                        .splineTo(new Vector2d(-12,-12), Math.toRadians(0))
+//                        .splineTo(new Vector2d(30,-12), Math.toRadians(0))
+//                        .splineTo(new Vector2d(40,-36), Math.toRadians(180))
 
                 //Red On-stage Left  --  StartPose (-36, -60, 90 deg)
-                        .splineTo(new Vector2d(-40, -36), Math.toRadians(180))
-                        .lineToX(-34)
-                        .waitSeconds(2)
-                        .strafeTo(new Vector2d(-34, -12))
-                        .strafeTo(new Vector2d(-33.9, -12))
-                        .turn(Math.toRadians(180))
-                        .splineTo(new Vector2d(-12,-12), Math.toRadians(0))
-                        .splineTo(new Vector2d(30,-12), Math.toRadians(0))
-                        .splineTo(new Vector2d(40,-36), Math.toRadians(180))
+//                        .splineTo(new Vector2d(-40, -36), Math.toRadians(180))
+//                        .lineToX(-34)
+//                        .waitSeconds(2)
+//                        .strafeTo(new Vector2d(-34, -12))
+//                        .strafeTo(new Vector2d(-33.9, -12))
+//                        .turn(Math.toRadians(180))
+//                        .splineTo(new Vector2d(-12,-12), Math.toRadians(0))
+//                        .splineTo(new Vector2d(30,-12), Math.toRadians(0))
+//                        .splineTo(new Vector2d(40,-36), Math.toRadians(180))
 
 
                 //Blue On-stage Center -- StartPose (-36, 60, 270 deg)
@@ -110,33 +110,33 @@ public class MeepMeepTesting {
 
 
                 //Blue Back-Stage Center  --  StartPose (12, 60, 270 deg)
-                        .splineTo(new Vector2d(14, 35), Math.toRadians(270))
-                        .waitSeconds(2)
-                        .strafeTo(new Vector2d(40, 35))
-                        .turn(Math.toRadians(-90))
-                        .waitSeconds(2)
-                        .strafeTo(new Vector2d(45, 60))
-                        .strafeTo(new Vector2d(60, 60))
-
-                //Blue Back-Stage Right  --  StartPose (12, 60, 270 deg)
-                        .splineTo(new Vector2d(10, 35), Math.toRadians(180))
-                        .waitSeconds(2)
-                        .strafeTo(new Vector2d(40, 35))
-                        //.turn(Math.toRadians(90))
-                        .waitSeconds(2)
-                        .strafeTo(new Vector2d(45, 60))
-                        .strafeTo(new Vector2d(60, 60))
-
-                //Blue Back-Stage Left  --  StartPose (12, 60, 270 deg)
-                        .strafeTo(new Vector2d(36, 35))
-                        .turnTo(Math.toRadians(180))
-                        .waitSeconds(2)
-                        .strafeTo(new Vector2d(40, 35))
-                        .waitSeconds(2)
-                        .strafeTo(new Vector2d(45, 60))
-                        .strafeTo(new Vector2d(60, 60))
-
-
+//                        .splineTo(new Vector2d(14, 35), Math.toRadians(270))
+//                        .waitSeconds(2)
+//                        .strafeTo(new Vector2d(40, 35))
+//                        .turn(Math.toRadians(-90))
+//                        .waitSeconds(2)
+//                        .strafeTo(new Vector2d(45, 60))
+//                        .strafeTo(new Vector2d(60, 60))
+//
+//                //Blue Back-Stage Right  --  StartPose (12, 60, 270 deg)
+//                        .splineTo(new Vector2d(10, 35), Math.toRadians(180))
+//                        .waitSeconds(2)
+//                        .strafeTo(new Vector2d(40, 35))
+//                        //.turn(Math.toRadians(90))
+//                        .waitSeconds(2)
+//                        .strafeTo(new Vector2d(45, 60))
+//                        .strafeTo(new Vector2d(60, 60))
+//
+//                //Blue Back-Stage Left  --  StartPose (12, 60, 270 deg)
+//                        .strafeTo(new Vector2d(36, 35))
+//                        .turnTo(Math.toRadians(180))
+//                        .waitSeconds(2)
+//                        .strafeTo(new Vector2d(40, 35))
+//                        .waitSeconds(2)
+//                        .strafeTo(new Vector2d(45, 60))
+//                        .strafeTo(new Vector2d(60, 60))
+//
+//
 
 
                 //TEST TRAJECTORY -- just for my sanity, hehe... (Start pose at 0 0 0)

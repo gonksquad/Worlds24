@@ -75,40 +75,40 @@ public class rb extends OpMode {
         Hardware hardware = new Hardware(hardwareMap);
         MecanumDrive drive = new MecanumDrive(hardwareMap, new Pose2d(12, -60, Math.toRadians(90)));
 
-        Pose2d pose1 = new Pose2d(36, -35, Math.toRadians(180));
-        Pose2d pose2 = new Pose2d(40, -35, Math.toRadians(180));
+        Pose2d pose1r = new Pose2d(36, -35, Math.toRadians(180));
+        Pose2d pose2r = new Pose2d(40, -35, Math.toRadians(180));
 
-        Pose2d pose1r = new Pose2d(10, -32, Math.toRadians(180));
-        Pose2d pose2r = new Pose2d(44, -28, Math.toRadians(180));
+        Pose2d pose1 = new Pose2d(13, -32, Math.toRadians(180));
+        Pose2d pose2 = new Pose2d(44, -28, Math.toRadians(180));
 
-        Pose2d pose1c = new Pose2d(16, -35, Math.toRadians(90));
+        Pose2d pose1c = new Pose2d(17, -35, Math.toRadians(90));
         Pose2d pose2c = new Pose2d(46, -35, Math.toRadians(180));
 
-        l1 = drive.actionBuilder(drive.pose)
-                .strafeTo(new Vector2d(33, -32))
+        r1 = drive.actionBuilder(drive.pose)
+                .strafeTo(new Vector2d(37, -32))
                 .turnTo(Math.toRadians(180))
                 .build();
 
-        l2 = drive.actionBuilder(pose1)
+        r2 = drive.actionBuilder(pose1)
                 .strafeTo(new Vector2d(46, -43))
                 .build();
 
-        l3 = drive.actionBuilder(pose2)
+        r3 = drive.actionBuilder(pose2)
                 .strafeTo(new Vector2d(45, -60))
                 .strafeTo(new Vector2d(60, -60))
                 .build();
 
 
 
-        r1 = drive.actionBuilder(drive.pose)
-                .splineTo(new Vector2d(10, -32), Math.toRadians(180))
+        l1 = drive.actionBuilder(drive.pose)
+                .splineTo(new Vector2d(13, -32), Math.toRadians(180))
                 .build();
 
-        r2 = drive.actionBuilder(pose1r)
+        l2 = drive.actionBuilder(pose1r)
                 .strafeTo(new Vector2d(44, -28))
                 .build();
 
-        r3 = drive.actionBuilder(pose2r)
+        l3 = drive.actionBuilder(pose2r)
                 .strafeTo(new Vector2d(45, -60))
                 .strafeTo(new Vector2d(60, -60))
                 .build();
@@ -116,12 +116,12 @@ public class rb extends OpMode {
 
 
         c1 = drive.actionBuilder(drive.pose)
-                .splineTo(new Vector2d(16, -35), Math.toRadians(90))
+                .splineTo(new Vector2d(17, -35), Math.toRadians(90))
                 .build();
 
         c2 = drive.actionBuilder(pose1c)
                 .strafeTo(new Vector2d(46, -35))
-                .turn(Math.toRadians(-90))
+                .turn(Math.toRadians(90))
                 .build();
 
         c3 = drive.actionBuilder(pose2c)
@@ -249,9 +249,9 @@ public class rb extends OpMode {
             centerCrop = YCbCr.submat(centerRect);
             rightCrop = YCbCr.submat(rightRect);
 
-            Core.extractChannel(leftCrop, leftCrop, 2);
-            Core.extractChannel(centerCrop, centerCrop, 2);
-            Core.extractChannel(rightCrop, rightCrop, 2);
+            Core.extractChannel(leftCrop, leftCrop, 1);
+            Core.extractChannel(centerCrop, centerCrop, 1);
+            Core.extractChannel(rightCrop, rightCrop, 1);
 
             Scalar leftavg = Core.mean(leftCrop);
             Scalar centeravg = Core.mean(centerCrop);
