@@ -34,34 +34,32 @@ public class Hardware {
 
     public IMU imu;
 
-//    RevBlinkinLedDriver blinkinLedDriver;
-//    RevBlinkinLedDriver.BlinkinPattern black;
+    // RevBlinkinLedDriver blinkinLedDriver;
+    // RevBlinkinLedDriver.BlinkinPattern black;
 
     public Hardware(HardwareMap hardwareMap) {
-        //blinkinLedDriver = hardwareMap.get(RevBlinkinLedDriver.class, "blinkin");
-//        black = RevBlinkinLedDriver.BlinkinPattern.BLACK;
-//        blinkinLedDriver.setPattern(black);
+        // blinkinLedDriver = hardwareMap.get(RevBlinkinLedDriver.class, "blinkin");
+        // black = RevBlinkinLedDriver.BlinkinPattern.BLACK;
+        // blinkinLedDriver.setPattern(black);
 
-        leftFront = hardwareMap.get(DcMotor.class, "2");
-        leftRear = hardwareMap.get(DcMotor.class, "0");
+        leftFront = hardwareMap.get(DcMotor.class, "E1");
+        leftRear = hardwareMap.get(DcMotor.class, "E3");
         rightRear = hardwareMap.get(DcMotor.class, "1");
         rightFront = hardwareMap.get(DcMotor.class, "3");
 
-        leftSlide = hardwareMap.get(DcMotor.class, "E2");
-        rightSlide = hardwareMap.get(DcMotor.class, "E1");
+        leftSlide = hardwareMap.get(DcMotor.class, "E0");
+        rightSlide = hardwareMap.get(DcMotor.class, "0");
 
         leftSlide.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         rightSlide.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         leftSlide.setDirection(DcMotorSimple.Direction.REVERSE);
 
-//        verticalActuator = hardwareMap.get(DcMotor.class, "E3");
+        // verticalActuator = hardwareMap.get(DcMotor.class, "E3");
         intake = hardwareMap.get(DcMotor.class, "E3");
-
-        leftFront.setDirection(DcMotorSimple.Direction.REVERSE);
+        verticalActuator = hardwareMap.get(DcMotor.class, "E2");
         rightRear.setDirection(DcMotorSimple.Direction.REVERSE);
 
-        imu = hardwareMap.get(IMU.class, "imu");
         IMU.Parameters parameters = new IMU.Parameters(new RevHubOrientationOnRobot(
                 RevHubOrientationOnRobot.LogoFacingDirection.UP,
                 RevHubOrientationOnRobot.UsbFacingDirection.BACKWARD));
@@ -73,15 +71,15 @@ public class Hardware {
 
         // distance = hardwareMap.get(DistanceSensor.class, "distance");
 
-        //TODO: uncomment bottomslot and topslot
-        //bottomSlot = hardwareMap.get(RevColorSensorV3.class, "I2C3");
-        //distance = hardwareMap.get(Rev2mDistanceSensor.class, "I2C1");
-        //topSlot = hardwareMap.get(RevColorSensorV3.class, "I2C2");
+        // TODO: uncomment bottomslot and topslot
+        // bottomSlot = hardwareMap.get(RevColorSensorV3.class, "I2C3");
+        // distance = hardwareMap.get(Rev2mDistanceSensor.class, "I2C1");
+        // topSlot = hardwareMap.get(RevColorSensorV3.class, "I2C2");
     }
 
-//    public void setLEDs(RevBlinkinLedDriver.BlinkinPattern pattern){
-//        blinkinLedDriver.setPattern(pattern);
-//    }
+    // public void setLEDs(RevBlinkinLedDriver.BlinkinPattern pattern){
+    // blinkinLedDriver.setPattern(pattern);
+    // }
 
     public Boolean pixelCheck() {
         if (topSlot.getDistance(DistanceUnit.CM) < 2 && bottomSlot.getDistance(DistanceUnit.CM) < 2) {
