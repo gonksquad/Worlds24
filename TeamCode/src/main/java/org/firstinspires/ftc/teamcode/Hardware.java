@@ -21,7 +21,8 @@ public class Hardware {
     public DcMotor rightFront;
     public DcMotor leftSlide;
     public DcMotor rightSlide;
-    public DcMotor verticalActuator;
+    public DcMotor verticalActuatorL;
+    public DcMotor verticalActuatorR;
     public DcMotor intake;
     public Servo door;
     public Servo boxRotation;
@@ -56,14 +57,15 @@ public class Hardware {
         leftSlide.setDirection(DcMotorSimple.Direction.REVERSE);
 
         // verticalActuator = hardwareMap.get(DcMotor.class, "E3");
-        intake = hardwareMap.get(DcMotor.class, "E3");
-        verticalActuator = hardwareMap.get(DcMotor.class, "E2");
+        intake = hardwareMap.get(DcMotor.class, "2");
+        verticalActuatorL = hardwareMap.get(DcMotor.class, "E2"); //fix mapping
+        verticalActuatorR = hardwareMap.get(DcMotor.class, "E2"); //fix mapping
         rightRear.setDirection(DcMotorSimple.Direction.REVERSE);
 
-        IMU.Parameters parameters = new IMU.Parameters(new RevHubOrientationOnRobot(
-                RevHubOrientationOnRobot.LogoFacingDirection.UP,
-                RevHubOrientationOnRobot.UsbFacingDirection.BACKWARD));
-        imu.initialize(parameters);
+//        IMU.Parameters parameters = new IMU.Parameters(new RevHubOrientationOnRobot(
+//                RevHubOrientationOnRobot.LogoFacingDirection.UP,
+//                RevHubOrientationOnRobot.UsbFacingDirection.BACKWARD));
+//        imu.initialize(parameters);
 
         door = hardwareMap.get(Servo.class, "ES1");
         boxRotation = hardwareMap.get(Servo.class, "ES0");

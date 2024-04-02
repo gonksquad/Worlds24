@@ -114,7 +114,7 @@ public class Tele3 extends LinearOpMode {
                 hardware.intake.setPower(-1);
             }
             //set powers to pull up hooks
-            hardware.verticalActuator.setPower(-(gamepad2.left_stick_y) * 5);
+            hardware.verticalActuatorL.setPower(-(gamepad2.left_stick_y) * 5);
             hardware.rightSlide.setPower(-(gamepad2.left_stick_y) * 5);
 
 
@@ -148,14 +148,14 @@ public class Tele3 extends LinearOpMode {
             }
 
             if (gamepad2.left_bumper) {
-                hardware.verticalActuator.setPower(1);
+                hardware.verticalActuatorL.setPower(1);
                 hardware.rightSlide.setPower(1);
             } else if (gamepad2.right_bumper) {
-                hardware.verticalActuator.setPower(-1);
+                hardware.verticalActuatorL.setPower(-1);
                 hardware.rightSlide.setPower(-1);
                 hardware.intake.setPower(0);
             } else {
-                hardware.verticalActuator.setPower(0);
+                hardware.verticalActuatorL.setPower(0);
                 hardware.rightSlide.setPower(0);
             }
 

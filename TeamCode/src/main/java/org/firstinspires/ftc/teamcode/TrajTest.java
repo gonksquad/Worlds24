@@ -55,9 +55,9 @@ public class TrajTest extends LinearOpMode {
                 .strafeTo(new Vector2d(60, 60))
                 .build();
 
-//        Actions.runBlocking(
-//                trajectory1
-//        );
+       Actions.runBlocking(
+               trajectory1
+       );
 
         hardware.intake.setPower(1);
         sleep(1000);
