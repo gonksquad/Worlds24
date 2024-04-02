@@ -73,60 +73,60 @@ public class rb extends OpMode {
     @Override
     public void loop() {
         Hardware hardware = new Hardware(hardwareMap);
-        MecanumDrive drive = new MecanumDrive(hardwareMap, new Pose2d(12, 60, Math.toRadians(270)));
+        MecanumDrive drive = new MecanumDrive(hardwareMap, new Pose2d(12, -60, Math.toRadians(90)));
 
-        Pose2d pose1 = new Pose2d(36, 35, Math.toRadians(180));
-        Pose2d pose2 = new Pose2d(40, 35, Math.toRadians(180));
+        Pose2d pose1 = new Pose2d(36, -35, Math.toRadians(180));
+        Pose2d pose2 = new Pose2d(40, -35, Math.toRadians(180));
 
-        Pose2d pose1r = new Pose2d(10, 32, Math.toRadians(180));
-        Pose2d pose2r = new Pose2d(44, 28, Math.toRadians(180));
+        Pose2d pose1r = new Pose2d(10, -32, Math.toRadians(180));
+        Pose2d pose2r = new Pose2d(44, -28, Math.toRadians(180));
 
-        Pose2d pose1c = new Pose2d(16, 35, Math.toRadians(270));
-        Pose2d pose2c = new Pose2d(46, 35, Math.toRadians(180));
+        Pose2d pose1c = new Pose2d(16, -35, Math.toRadians(90));
+        Pose2d pose2c = new Pose2d(46, -35, Math.toRadians(180));
 
         l1 = drive.actionBuilder(drive.pose)
-                .strafeTo(new Vector2d(33, 32))
+                .strafeTo(new Vector2d(33, -32))
                 .turnTo(Math.toRadians(180))
                 .build();
 
         l2 = drive.actionBuilder(pose1)
-                .strafeTo(new Vector2d(46, 43))
+                .strafeTo(new Vector2d(46, -43))
                 .build();
 
         l3 = drive.actionBuilder(pose2)
-                .strafeTo(new Vector2d(45, 60))
-                .strafeTo(new Vector2d(60, 60))
+                .strafeTo(new Vector2d(45, -60))
+                .strafeTo(new Vector2d(60, -60))
                 .build();
 
 
 
         r1 = drive.actionBuilder(drive.pose)
-                .splineTo(new Vector2d(10, 32), Math.toRadians(180))
+                .splineTo(new Vector2d(10, -32), Math.toRadians(180))
                 .build();
 
         r2 = drive.actionBuilder(pose1r)
-                .strafeTo(new Vector2d(44, 28))
+                .strafeTo(new Vector2d(44, -28))
                 .build();
 
         r3 = drive.actionBuilder(pose2r)
-                .strafeTo(new Vector2d(45, 60))
-                .strafeTo(new Vector2d(60, 60))
+                .strafeTo(new Vector2d(45, -60))
+                .strafeTo(new Vector2d(60, -60))
                 .build();
 
 
 
         c1 = drive.actionBuilder(drive.pose)
-                .splineTo(new Vector2d(16, 35), Math.toRadians(270))
+                .splineTo(new Vector2d(16, -35), Math.toRadians(90))
                 .build();
 
         c2 = drive.actionBuilder(pose1c)
-                .strafeTo(new Vector2d(46, 35))
+                .strafeTo(new Vector2d(46, -35))
                 .turn(Math.toRadians(-90))
                 .build();
 
         c3 = drive.actionBuilder(pose2c)
-                .strafeTo(new Vector2d(45, 60))
-                .strafeTo(new Vector2d(60, 60))
+                .strafeTo(new Vector2d(45, -60))
+                .strafeTo(new Vector2d(60, -60))
                 .build();
 
         if (Objects.equals(position, "left")) {
