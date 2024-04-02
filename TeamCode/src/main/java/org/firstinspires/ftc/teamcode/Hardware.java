@@ -47,7 +47,7 @@ public class Hardware {
         rightRear = hardwareMap.get(DcMotor.class, "1");
         rightFront = hardwareMap.get(DcMotor.class, "3");
 
-        leftSlide = hardwareMap.get(DcMotor.class, "E0");
+        leftSlide = hardwareMap.get(DcMotor.class, "E2");
         rightSlide = hardwareMap.get(DcMotor.class, "E1");
 
         leftSlide.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
@@ -55,18 +55,11 @@ public class Hardware {
 
         leftSlide.setDirection(DcMotorSimple.Direction.REVERSE);
 
-        verticalActuator = hardwareMap.get(DcMotor.class, "E2");
+//        verticalActuator = hardwareMap.get(DcMotor.class, "E3");
         intake = hardwareMap.get(DcMotor.class, "E3");
 
-        leftRear.setDirection(DcMotorSimple.Direction.REVERSE);
-        leftFront.setDirection(DcMotorSimple.Direction.FORWARD);
+        leftFront.setDirection(DcMotorSimple.Direction.REVERSE);
         rightRear.setDirection(DcMotorSimple.Direction.REVERSE);
-        rightFront.setDirection(DcMotorSimple.Direction.REVERSE);
-
-        leftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        rightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        leftRear.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        rightRear.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         imu = hardwareMap.get(IMU.class, "imu");
         IMU.Parameters parameters = new IMU.Parameters(new RevHubOrientationOnRobot(
