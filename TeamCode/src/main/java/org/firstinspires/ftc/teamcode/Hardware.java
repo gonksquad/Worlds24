@@ -42,13 +42,13 @@ public class Hardware {
 //        black = RevBlinkinLedDriver.BlinkinPattern.BLACK;
 //        blinkinLedDriver.setPattern(black);
 
-        leftFront = hardwareMap.get(DcMotor.class, "2");
-        leftRear = hardwareMap.get(DcMotor.class, "0");
+        leftFront = hardwareMap.get(DcMotor.class, "E1");
+        leftRear = hardwareMap.get(DcMotor.class, "E3");
         rightRear = hardwareMap.get(DcMotor.class, "1");
         rightFront = hardwareMap.get(DcMotor.class, "3");
 
         leftSlide = hardwareMap.get(DcMotor.class, "E0");
-        rightSlide = hardwareMap.get(DcMotor.class, "E1");
+        rightSlide = hardwareMap.get(DcMotor.class, "0");
 
         leftSlide.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         rightSlide.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
@@ -56,7 +56,7 @@ public class Hardware {
         leftSlide.setDirection(DcMotorSimple.Direction.REVERSE);
 
         verticalActuator = hardwareMap.get(DcMotor.class, "E2");
-        intake = hardwareMap.get(DcMotor.class, "E3");
+        intake = hardwareMap.get(DcMotor.class, "2");
 
         leftRear.setDirection(DcMotorSimple.Direction.REVERSE);
         leftFront.setDirection(DcMotorSimple.Direction.FORWARD);
