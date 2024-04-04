@@ -30,7 +30,7 @@ import java.util.Objects;
 
 
 @Autonomous
-public class ro extends OpMode {
+public class bo extends OpMode {
 
     OpenCvWebcam webcam1 = null;
     String position = "none";
@@ -73,31 +73,31 @@ public class ro extends OpMode {
     @Override
     public void loop() {
         Hardware hardware = new Hardware(hardwareMap);
-        MecanumDrive drive = new MecanumDrive(hardwareMap, new Pose2d(-36, -60, Math.toRadians(90)));
+        MecanumDrive drive = new MecanumDrive(hardwareMap, new Pose2d(-36, 60, Math.toRadians(270)));
 
-        Pose2d pose2 = new Pose2d(-33.9, -12, Math.toRadians(180));
-        Pose2d pose1 = new Pose2d(-34, -36, Math.toRadians(180));
+        Pose2d pose2 = new Pose2d(-33.9, 12, Math.toRadians(180));
+        Pose2d pose1 = new Pose2d(-34, 36, Math.toRadians(180));
 
-        Pose2d pose1r = new Pose2d(-34, -36, Math.toRadians(0));
-        Pose2d pose2r = new Pose2d(-12, -12, Math.toRadians(0));
+        Pose2d pose1r = new Pose2d(-34, 36, Math.toRadians(0));
+        Pose2d pose2r = new Pose2d(-12, 12, Math.toRadians(0));
 
-        Pose2d pose1c = new Pose2d(-34, -36, Math.toRadians(90));
-        Pose2d pose2c = new Pose2d(-12, -12, Math.toRadians(180));
+        Pose2d pose1c = new Pose2d(-34, 36, Math.toRadians(270));
+        Pose2d pose2c = new Pose2d(-12, 12, Math.toRadians(180));
 
-        l1 = drive.actionBuilder(drive.pose)
-                .splineTo(new Vector2d(-40, -31), Math.toRadians(180))
+        r1 = drive.actionBuilder(drive.pose)
+                .splineTo(new Vector2d(-40, 31), Math.toRadians(180))
                 .lineToX(-36)
                 .build();
 
-        l2 = drive.actionBuilder(pose1)
-                .strafeTo(new Vector2d(-34, -10))
-                .strafeTo(new Vector2d(-33.9, -10))
-                .splineTo(new Vector2d(-12,-10), Math.toRadians(0))
-                .splineTo(new Vector2d(24,-10), Math.toRadians(0))
-                .splineTo(new Vector2d(45,-30), Math.toRadians(0))
+        r2 = drive.actionBuilder(pose1)
+                .strafeTo(new Vector2d(-34, 10))
+                .strafeTo(new Vector2d(-33.9, 10))
+                .splineTo(new Vector2d(-12,10), Math.toRadians(0))
+                .splineTo(new Vector2d(24,10), Math.toRadians(0))
+                .splineTo(new Vector2d(45,30), Math.toRadians(0))
                 .build();
 
-        l3 = drive.actionBuilder(pose2)
+        r3 = drive.actionBuilder(pose2)
                 .build();
 
 
@@ -108,36 +108,36 @@ public class ro extends OpMode {
 //                        .splineTo(new Vector2d(-12,-12), Math.toRadians(0))
 //                        .splineTo(new Vector2d(30,-12), Math.toRadians(0))
 //                        .splineTo(new Vector2d(40,-36), Math.toRadians(180))
-        r1 = drive.actionBuilder(drive.pose)
-                .splineTo(new Vector2d(-34, -36), Math.toRadians(0))
+        l1 = drive.actionBuilder(drive.pose)
+                .splineTo(new Vector2d(-34, 36), Math.toRadians(0))
                 .build();
 
-        r2 = drive.actionBuilder(pose1r)
-                .strafeTo(new Vector2d(-34, -10))
-                .strafeTo(new Vector2d(-33.9, -10))
-                .splineTo(new Vector2d(-12,-10), Math.toRadians(0))
-                .splineTo(new Vector2d(30,-10), Math.toRadians(0))
-                .splineTo(new Vector2d(40,-36), Math.toRadians(180))
-                .strafeTo(new Vector2d(46, -36))
+        l2 = drive.actionBuilder(pose1r)
+                .strafeTo(new Vector2d(-34, 10))
+                .strafeTo(new Vector2d(-33.9, 10))
+                .splineTo(new Vector2d(-12,10), Math.toRadians(0))
+                .splineTo(new Vector2d(30,10), Math.toRadians(0))
+                .splineTo(new Vector2d(40,36), Math.toRadians(180))
+                .strafeTo(new Vector2d(46, 36))
                 .build();
 
-        r3 = drive.actionBuilder(pose2r)
+        l3 = drive.actionBuilder(pose2r)
                 .build();
 
 
 
         c1 = drive.actionBuilder(drive.pose)
-                .splineTo(new Vector2d(-33, -36), Math.toRadians(90))
+                .splineTo(new Vector2d(-33, 36), Math.toRadians(270))
                 .build();
 
         c2 = drive.actionBuilder(pose1c)
-                .strafeTo(new Vector2d(-50, -40))
-                .strafeTo(new Vector2d(-50, -41))
-                .lineToY(-24)
-                .splineTo(new Vector2d(-12,-12), Math.toRadians(0))
-                .splineTo(new Vector2d(30,-12), Math.toRadians(0))
-                .splineTo(new Vector2d(40,-36), Math.toRadians(180))
-                .strafeTo(new Vector2d(45, -33))
+                .strafeTo(new Vector2d(-50, 40))
+                .strafeTo(new Vector2d(-50, 41))
+                .lineToY(24)
+                .splineTo(new Vector2d(-12,12), Math.toRadians(0))
+                .splineTo(new Vector2d(30,12), Math.toRadians(0))
+                .splineTo(new Vector2d(40,36), Math.toRadians(180))
+                .strafeTo(new Vector2d(45, 30))
                 .build();
 
         c3 = drive.actionBuilder(pose2c)
@@ -170,7 +170,7 @@ public class ro extends OpMode {
 //            hardware.rightSlide.setPower(-0.25);
 
             Actions.runBlocking(
-                   l3
+                    l3
             );
         }
         else if (Objects.equals(position, "center")) {
@@ -263,9 +263,9 @@ public class ro extends OpMode {
             centerCrop = YCbCr.submat(centerRect);
             rightCrop = YCbCr.submat(rightRect);
 
-            Core.extractChannel(leftCrop, leftCrop, 1);
-            Core.extractChannel(centerCrop, centerCrop, 1);
-            Core.extractChannel(rightCrop, rightCrop, 1);
+            Core.extractChannel(leftCrop, leftCrop, 2);
+            Core.extractChannel(centerCrop, centerCrop, 2);
+            Core.extractChannel(rightCrop, rightCrop, 2);
 
             Scalar leftavg = Core.mean(leftCrop);
             Scalar centeravg = Core.mean(centerCrop);

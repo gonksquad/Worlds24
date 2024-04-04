@@ -55,12 +55,13 @@ public class Hardware {
         rightSlide.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         leftSlide.setDirection(DcMotorSimple.Direction.REVERSE);
+        leftFront.setDirection(DcMotorSimple.Direction.REVERSE);
+        //rightRear.setDirection(DcMotorSimple.Direction.REVERSE);
 
         // verticalActuator = hardwareMap.get(DcMotor.class, "E3");
         intake = hardwareMap.get(DcMotor.class, "2");
         verticalActuatorL = hardwareMap.get(DcMotor.class, "E2"); //fix mapping
         verticalActuatorR = hardwareMap.get(DcMotor.class, "E2"); //fix mapping
-        rightRear.setDirection(DcMotorSimple.Direction.REVERSE);
 
 //        IMU.Parameters parameters = new IMU.Parameters(new RevHubOrientationOnRobot(
 //                RevHubOrientationOnRobot.LogoFacingDirection.UP,
