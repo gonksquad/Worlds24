@@ -78,19 +78,19 @@ public class rb extends OpMode {
         Pose2d pose1r = new Pose2d(36, -35, Math.toRadians(180));
         Pose2d pose2r = new Pose2d(40, -35, Math.toRadians(180));
 
-        Pose2d pose1 = new Pose2d(13, -32, Math.toRadians(180));
-        Pose2d pose2 = new Pose2d(44, -28, Math.toRadians(180));
+        Pose2d pose1 = new Pose2d(36, -35, Math.toRadians(180));
+        Pose2d pose2 = new Pose2d(50, -43, Math.toRadians(180));
 
         Pose2d pose1c = new Pose2d(17, -35, Math.toRadians(90));
         Pose2d pose2c = new Pose2d(46, -35, Math.toRadians(180));
 
         r1 = drive.actionBuilder(drive.pose)
-                .strafeTo(new Vector2d(37, -32))
+                .strafeTo(new Vector2d(36, -35))
                 .turnTo(Math.toRadians(180))
                 .build();
 
         r2 = drive.actionBuilder(pose1)
-                .strafeTo(new Vector2d(46, -43))
+                .strafeTo(new Vector2d(50, -43))
                 .build();
 
         r3 = drive.actionBuilder(pose2)
@@ -140,12 +140,12 @@ public class rb extends OpMode {
                     l2
             );
             hardware.leftSlide.setPower(0.75);
-            hardware.rightSlide.setPower(0.75);
+            //hardware.rightSlide.setPower(0.75);
             sleep(200);
             hardware.boxRotation.setPosition(0);
             sleep(500);
-            hardware.leftSlide.setPower(0);
-            hardware.rightSlide.setPower(0);
+            hardware.leftSlide.setPower(0.15);
+            //hardware.rightSlide.setPower(0);
             sleep(500);
             hardware.door.setPosition(0);
             sleep(2000);
@@ -153,7 +153,7 @@ public class rb extends OpMode {
             hardware.boxRotation.setPosition(1);
             sleep(1000);
             hardware.leftSlide.setPower(-0.25);
-            hardware.rightSlide.setPower(-0.25);
+            //hardware.rightSlide.setPower(-0.25);
 
             Actions.runBlocking(
                    l3
@@ -170,12 +170,12 @@ public class rb extends OpMode {
                     c2
             );
             hardware.leftSlide.setPower(0.75);
-            hardware.rightSlide.setPower(0.75);
+            //hardware.rightSlide.setPower(0.75);
             sleep(200);
             hardware.boxRotation.setPosition(0);
             sleep(500);
-            hardware.leftSlide.setPower(0);
-            hardware.rightSlide.setPower(0);
+            hardware.leftSlide.setPower(0.15);
+            //hardware.rightSlide.setPower(0);
             sleep(500);
             hardware.door.setPosition(0);
             sleep(2000);
@@ -183,7 +183,7 @@ public class rb extends OpMode {
             hardware.boxRotation.setPosition(1);
             sleep(1000);
             hardware.leftSlide.setPower(-0.25);
-            hardware.rightSlide.setPower(-0.25);
+            //hardware.rightSlide.setPower(-0.25);
 
             Actions.runBlocking(
                     c3
@@ -199,12 +199,12 @@ public class rb extends OpMode {
                     r2
             );
             hardware.leftSlide.setPower(0.75);
-            hardware.rightSlide.setPower(0.75);
+            //hardware.rightSlide.setPower(0.75);
             sleep(200);
             hardware.boxRotation.setPosition(0);
             sleep(500);
-            hardware.leftSlide.setPower(0);
-            hardware.rightSlide.setPower(0);
+            hardware.leftSlide.setPower(0.15);
+            //hardware.rightSlide.setPower(0);
             sleep(500);
             hardware.door.setPosition(0);
             sleep(2000);
@@ -212,7 +212,7 @@ public class rb extends OpMode {
             hardware.boxRotation.setPosition(1);
             sleep(1000);
             hardware.leftSlide.setPower(-0.25);
-            hardware.rightSlide.setPower(-0.25);
+            //hardware.rightSlide.setPower(-0.25);
 
             Actions.runBlocking(
                     r3

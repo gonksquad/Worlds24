@@ -30,6 +30,8 @@ public class Tele3 extends LinearOpMode {
     private double time;
     private double teem;
     private boolean CanMove = true;
+    private boolean BoxDelay = true;
+    public String armpos = "down";
 
     public void runOpMode() {
 
@@ -81,13 +83,24 @@ public class Tele3 extends LinearOpMode {
                 speed = (gamepad1.right_trigger * 0.7) + 0.3;
             }
 
+            //debugging
+//            if (gamepad1.x){
+//                hardware.door.setPosition(0.25);
+//                hardware.boxRotation.setPosition(0);
+//            }
+//            if (gamepad1.y){
+//                hardware.door.setPosition(0);
+//                hardware.boxRotation.setPosition(1);
+//            }
+
             // Arm up intake sequence
             if (gamepad2.a) {
                 hardware.door.setPosition(0);
-                hardware.leftSlide.setPower(-0.75);
+                hardware.leftSlide.setPower(-1);
                 //hardware.rightSlide.setPower(-0.75);
                 hardware.boxRotation.setPosition(1);
                 hardware.intake.setPower(1);
+                armpos = "down";
             }
 
             if (gamepad2.b) {
@@ -96,11 +109,14 @@ public class Tele3 extends LinearOpMode {
                 hardware.leftSlide.setPower(1);
                 //hardware.rightSlide.setPower(1);
                 armdelay.reset();
-                hardware.boxRotation.setPosition(0);
                 CanMove = false;
+                armpos = "up";
             }
             if (armdelay.time(TimeUnit.MILLISECONDS) > 500){
                 CanMove = true;
+                if (armpos == "up") {
+                    hardware.boxRotation.setPosition(0.5);
+                }
             }
 
 
@@ -122,13 +138,13 @@ public class Tele3 extends LinearOpMode {
 
             if (CanMove) {
                 if (gamepad2.right_trigger != 0) {
-                    hardware.leftSlide.setPower(0.5);
+                    hardware.leftSlide.setPower(0.75);
                     //hardware.rightSlide.setPower(0.5);
                 } else if (gamepad2.left_trigger != 0) {
-                    hardware.leftSlide.setPower(-0.35);
+                    hardware.leftSlide.setPower(-0.5);
                     //hardware.rightSlide.setPower(-0.35);
                 } else {
-                    hardware.leftSlide.setPower(0.15);
+                    hardware.leftSlide.setPower(0.14);
                     //hardware.rightSlide.setPower(0);
                 }
             }
@@ -138,13 +154,14 @@ public class Tele3 extends LinearOpMode {
 
             // plane
             if (gamepad1.y && gamepad2.y) {
-                hardware.plane.setPower(-1);
-                try {
-                    Thread.sleep(100);
-                } catch (Exception e) {
-                    telemetry.addData("error", e);
-                }
                 hardware.plane.setPower(1);
+//                try {
+//                    Thread.sleep(100);
+//                } catch (Exception e) {
+//                    telemetry.addData("error", e);
+//                }
+            }else{
+                hardware.plane.setPower(-0.1);
             }
 
             if (gamepad2.left_bumper) {
