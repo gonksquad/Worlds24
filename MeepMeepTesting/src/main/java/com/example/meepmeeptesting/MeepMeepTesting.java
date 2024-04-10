@@ -18,7 +18,7 @@ public class MeepMeepTesting {
                 .setConstraints(60, 60, Math.toRadians(180), Math.toRadians(180), 15)
                 .build();
 
-        myBot.runAction(myBot.getDrive().actionBuilder(new Pose2d(12, -60, Math.toRadians(90)))
+        myBot.runAction(myBot.getDrive().actionBuilder(new Pose2d(-36, 31, Math.toRadians(180)))
 
 
                 //Red On-stage Center  --  StartPose (-36, -60, 90 deg)
@@ -140,11 +140,16 @@ public class MeepMeepTesting {
 //
 
 
-                .strafeTo(new Vector2d(36, -35))
-                .turnTo(Math.toRadians(180))
-                .strafeTo(new Vector2d(46, -43))
-                .strafeTo(new Vector2d(45, -60))
-                .strafeTo(new Vector2d(60, -60))
+//                .strafeTo(new Vector2d(36, -35))
+//                .turnTo(Math.toRadians(180))
+//                .strafeTo(new Vector2d(46, -43))
+//                .strafeTo(new Vector2d(45, -60))
+//                .strafeTo(new Vector2d(60, -60))
+                .strafeTo(new Vector2d(-34, 10))
+                .strafeTo(new Vector2d(-33.9, 10))
+                .splineTo(new Vector2d(-12,10), Math.toRadians(0))
+                .splineTo(new Vector2d(24,10), Math.toRadians(0))
+                .splineTo(new Vector2d(45,30), Math.toRadians(0))
 
 
                 //TEST TRAJECTORY -- just for my sanity, hehe... (Start pose at 0 0 0)

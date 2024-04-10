@@ -75,26 +75,26 @@ public class bo extends OpMode {
         Hardware hardware = new Hardware(hardwareMap);
         MecanumDrive drive = new MecanumDrive(hardwareMap, new Pose2d(-36, 60, Math.toRadians(270)));
 
-        Pose2d pose2 = new Pose2d(-33.9, 12, Math.toRadians(180));
-        Pose2d pose1 = new Pose2d(-34, 36, Math.toRadians(180));
+        Pose2d pose2 = new Pose2d(47, 31, Math.toRadians(0));
+        Pose2d pose1 = new Pose2d(-36, 31, Math.toRadians(180));
 
-        Pose2d pose1r = new Pose2d(-34, 36, Math.toRadians(0));
-        Pose2d pose2r = new Pose2d(-12, 12, Math.toRadians(0));
+        Pose2d pose1r = new Pose2d(-36, 34, Math.toRadians(0));
+        Pose2d pose2r = new Pose2d(48, 35, Math.toRadians(180));
 
-        Pose2d pose1c = new Pose2d(-34, 36, Math.toRadians(270));
-        Pose2d pose2c = new Pose2d(-12, 12, Math.toRadians(180));
+        Pose2d pose1c = new Pose2d(-32, 34, Math.toRadians(270));
+        Pose2d pose2c = new Pose2d(47.5, 28, Math.toRadians(180));
 
         r1 = drive.actionBuilder(drive.pose)
                 .splineTo(new Vector2d(-40, 31), Math.toRadians(180))
-                .lineToX(-36)
+                .lineToX(-34)
                 .build();
 
         r2 = drive.actionBuilder(pose1)
-                .strafeTo(new Vector2d(-34, 10))
-                .strafeTo(new Vector2d(-33.9, 10))
-                .splineTo(new Vector2d(-12,10), Math.toRadians(0))
-                .splineTo(new Vector2d(24,10), Math.toRadians(0))
-                .splineTo(new Vector2d(45,30), Math.toRadians(0))
+                .strafeTo(new Vector2d(-34, 11))
+                .strafeTo(new Vector2d(-33.9, 11))
+                .splineTo(new Vector2d(-12,11), Math.toRadians(0))
+                .splineTo(new Vector2d(24,11), Math.toRadians(0))
+                .splineTo(new Vector2d(47,32), Math.toRadians(0))
                 .build();
 
         r3 = drive.actionBuilder(pose2)
@@ -156,7 +156,7 @@ public class bo extends OpMode {
             hardware.leftSlide.setPower(0.75);
             //hardware.rightSlide.setPower(0.75);
             sleep(175);
-            hardware.boxRotation.setPosition(0);
+            hardware.boxRotation.setPosition(0.5);
             sleep(500);
             hardware.leftSlide.setPower(0.15);
             //hardware.rightSlide.setPower(0);
@@ -186,7 +186,7 @@ public class bo extends OpMode {
             hardware.leftSlide.setPower(0.75);
             //hardware.rightSlide.setPower(0.75);
             sleep(175);
-            hardware.boxRotation.setPosition(0);
+            hardware.boxRotation.setPosition(0.5);
             sleep(500);
             hardware.leftSlide.setPower(0.15);
             //hardware.rightSlide.setPower(0);
@@ -208,14 +208,14 @@ public class bo extends OpMode {
             );
             hardware.intake.setPower(.60);
             sleep(3000);
-            hardware.intake.setPower(0);
+            hardware.intake.setPower(0.5);
             Actions.runBlocking(
                     r2
             );
             hardware.leftSlide.setPower(0.75);
             //hardware.rightSlide.setPower(0.75);
             sleep(175);
-            hardware.boxRotation.setPosition(0);
+            hardware.boxRotation.setPosition(0.5);
             sleep(500);
             hardware.leftSlide.setPower(0.15);
             //hardware.rightSlide.setPower(0);
@@ -250,7 +250,7 @@ public class bo extends OpMode {
             Imgproc.cvtColor(input, YCbCr, Imgproc.COLOR_RGB2YCrCb);
             telemetry.addLine("pipeline running :)");
 
-            Rect centerRect = new Rect(290, 30, 50, 50);
+            Rect centerRect = new Rect(270, 30, 50, 50);
             Rect rightRect = new Rect(1, 1, 30, 50);
             Rect leftRect = new Rect(609, 1, 30, 50);
 

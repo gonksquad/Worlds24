@@ -74,24 +74,24 @@ public class bb extends OpMode {
     @Override
     public void loop() {
         Hardware hardware = new Hardware(hardwareMap);
-        MecanumDrive drive = new MecanumDrive(hardwareMap, new Pose2d(12, 60, Math.toRadians(270)));
+        MecanumDrive drive = new MecanumDrive(hardwareMap, new Pose2d(11, 60, Math.toRadians(270)));
 
-        Pose2d pose1 = new Pose2d(36, 35, Math.toRadians(180));
-        Pose2d pose2 = new Pose2d(40, 35, Math.toRadians(180));
+        Pose2d pose1 = new Pose2d(34, 32, Math.toRadians(180));
+        Pose2d pose2 = new Pose2d(47, 43, Math.toRadians(180));
 
-        Pose2d pose1r = new Pose2d(10, 32, Math.toRadians(180));
-        Pose2d pose2r = new Pose2d(44, 28, Math.toRadians(180));
+        Pose2d pose1r = new Pose2d(12, 33, Math.toRadians(180));
+        Pose2d pose2r = new Pose2d(47, 29, Math.toRadians(180));
 
-        Pose2d pose1c = new Pose2d(16, 35, Math.toRadians(270));
-        Pose2d pose2c = new Pose2d(46, 35, Math.toRadians(180));
+        Pose2d pose1c = new Pose2d(16, 34, Math.toRadians(270));
+        Pose2d pose2c = new Pose2d(47, 35, Math.toRadians(180));
 
         l1 = drive.actionBuilder(drive.pose)
-                .strafeTo(new Vector2d(33, 32))
+                .strafeTo(new Vector2d(34, 32))
                 .turnTo(Math.toRadians(180))
                 .build();
 
         l2 = drive.actionBuilder(pose1)
-                .strafeTo(new Vector2d(46, 43))
+                .strafeTo(new Vector2d(47, 43))
                 .build();
 
         l3 = drive.actionBuilder(pose2)
@@ -102,11 +102,11 @@ public class bb extends OpMode {
 
 
         r1 = drive.actionBuilder(drive.pose)
-                .splineTo(new Vector2d(12, 32), Math.toRadians(180))
+                .splineTo(new Vector2d(12, 33), Math.toRadians(180))
                 .build();
 
         r2 = drive.actionBuilder(pose1r)
-                .strafeTo(new Vector2d(46, 28))
+                .strafeTo(new Vector2d(47, 29))
                 .build();
 
         r3 = drive.actionBuilder(pose2r)
@@ -121,7 +121,7 @@ public class bb extends OpMode {
                 .build();
 
         c2 = drive.actionBuilder(pose1c)
-                .strafeTo(new Vector2d(46, 35))
+                .strafeTo(new Vector2d(47, 35))
                 .turn(Math.toRadians(-90))
                 .build();
 
@@ -140,11 +140,11 @@ public class bb extends OpMode {
             Actions.runBlocking(
                     l2
             );
-            hardware.leftSlide.setPower(0.75);
+            hardware.leftSlide.setPower(0.95);
             //hardware.rightSlide.setPower(0.75);
             sleep(200);
-            hardware.boxRotation.setPosition(0);
-            sleep(500);
+            hardware.boxRotation.setPosition(0.5);
+            sleep(300);
             hardware.leftSlide.setPower(0.15);
             //hardware.rightSlide.setPower(0);
             sleep(500);
@@ -170,11 +170,11 @@ public class bb extends OpMode {
             Actions.runBlocking(
                     c2
             );
-            hardware.leftSlide.setPower(0.75);
+            hardware.leftSlide.setPower(0.95);
             //hardware.rightSlide.setPower(0.75);
             sleep(200);
-            hardware.boxRotation.setPosition(0);
-            sleep(500);
+            hardware.boxRotation.setPosition(.5);
+            sleep(300);
             hardware.leftSlide.setPower(0.15);
             //hardware.rightSlide.setPower(0);
             sleep(500);
@@ -199,11 +199,11 @@ public class bb extends OpMode {
             Actions.runBlocking(
                     r2
             );
-            hardware.leftSlide.setPower(0.75);
+            hardware.leftSlide.setPower(0.95);
             //hardware.rightSlide.setPower(0.75);
             sleep(200);
-            hardware.boxRotation.setPosition(0);
-            sleep(500);
+            hardware.boxRotation.setPosition(0.5);
+            sleep(300);
             hardware.leftSlide.setPower(0.15);
             //hardware.rightSlide.setPower(0);
             sleep(500);
