@@ -75,9 +75,9 @@ public class Hardware {
         // distance = hardwareMap.get(DistanceSensor.class, "distance");
 
         // TODO: uncomment bottomslot and topslot
-        // bottomSlot = hardwareMap.get(RevColorSensorV3.class, "I2C3");
+         bottomSlot = hardwareMap.get(RevColorSensorV3.class, "I2C2");
         // distance = hardwareMap.get(Rev2mDistanceSensor.class, "I2C1");
-        // topSlot = hardwareMap.get(RevColorSensorV3.class, "I2C2");
+         topSlot = hardwareMap.get(RevColorSensorV3.class, "I2C1");
     }
 
      public void setLEDs(RevBlinkinLedDriver.BlinkinPattern pattern) {
