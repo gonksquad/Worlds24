@@ -35,13 +35,13 @@ public class Hardware {
 
     public IMU imu;
 
-    // RevBlinkinLedDriver blinkinLedDriver;
-    // RevBlinkinLedDriver.BlinkinPattern black;
+     RevBlinkinLedDriver blinkinLedDriver;
+     RevBlinkinLedDriver.BlinkinPattern black;
 
     public Hardware(HardwareMap hardwareMap) {
-        // blinkinLedDriver = hardwareMap.get(RevBlinkinLedDriver.class, "blinkin");
-        // black = RevBlinkinLedDriver.BlinkinPattern.BLACK;
-        // blinkinLedDriver.setPattern(black);
+         blinkinLedDriver = hardwareMap.get(RevBlinkinLedDriver.class, "blinkin");
+         black = RevBlinkinLedDriver.BlinkinPattern.BLACK;
+         blinkinLedDriver.setPattern(black);
 
         leftFront = hardwareMap.get(DcMotor.class, "E1");
         leftRear = hardwareMap.get(DcMotor.class, "E3");
@@ -80,9 +80,9 @@ public class Hardware {
         // topSlot = hardwareMap.get(RevColorSensorV3.class, "I2C2");
     }
 
-    // public void setLEDs(RevBlinkinLedDriver.BlinkinPattern pattern){
-    // blinkinLedDriver.setPattern(pattern);
-    // }
+     public void setLEDs(RevBlinkinLedDriver.BlinkinPattern pattern) {
+        blinkinLedDriver.setPattern(pattern);
+     }
 
     public Boolean pixelCheck() {
         if (topSlot.getDistance(DistanceUnit.CM) < 2 && bottomSlot.getDistance(DistanceUnit.CM) < 2) {
