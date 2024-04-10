@@ -255,8 +255,8 @@ public class ro extends OpMode {
 //            Rect rightRect = new Rect(540, 90, 99, 100);
 
             Rect centerRect = new Rect(290, 30, 50, 50);
-            Rect leftRect = new Rect(1, 1, 30, 50);
-            Rect rightRect = new Rect(609, 1, 30, 50);
+            Rect rightRect = new Rect(1, 1, 30, 50);
+            Rect leftRect = new Rect(609, 1, 30, 50);
 
             input.copyTo(outPut);
             Imgproc.rectangle(outPut, leftRect, rectColor, 2);
