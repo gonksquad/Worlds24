@@ -90,7 +90,7 @@ public class rb extends OpMode {
                 .build();
 
         r2 = drive.actionBuilder(pose1)
-                .strafeTo(new Vector2d(52, -41))
+                .strafeTo(new Vector2d(50, -41))
                 .build();
 
         r3 = drive.actionBuilder(pose2)
@@ -105,7 +105,7 @@ public class rb extends OpMode {
                 .build();
 
         l2 = drive.actionBuilder(pose1r)
-                .strafeTo(new Vector2d(44, -28))
+                .strafeTo(new Vector2d(49, -28))
                 .build();
 
         l3 = drive.actionBuilder(pose2r)
@@ -139,15 +139,19 @@ public class rb extends OpMode {
             Actions.runBlocking(
                     l2
             );
-            hardware.leftSlide.setPower(0.75);
+            hardware.leftSlide.setPower(0.95);
             //hardware.rightSlide.setPower(0.75);
             sleep(200);
             hardware.boxRotation.setPosition(0.5);
-            sleep(450);
+            sleep(100);
             hardware.leftSlide.setPower(0.15);
             //hardware.rightSlide.setPower(0);
             sleep(500);
             hardware.door.setPosition(0);
+            sleep(200);
+            hardware.leftSlide.setPower(0.95);
+            sleep(200);
+            hardware.leftSlide.setPower(0.15);
             sleep(2000);
 
             hardware.boxRotation.setPosition(1);
@@ -169,15 +173,19 @@ public class rb extends OpMode {
             Actions.runBlocking(
                     c2
             );
-            hardware.leftSlide.setPower(0.75);
+            hardware.leftSlide.setPower(0.95);
             //hardware.rightSlide.setPower(0.75);
             sleep(200);
             hardware.boxRotation.setPosition(0.5);
-            sleep(450);
+            sleep(100);
             hardware.leftSlide.setPower(0.15);
             //hardware.rightSlide.setPower(0);
             sleep(500);
             hardware.door.setPosition(0);
+            sleep(200);
+            hardware.leftSlide.setPower(0.95);
+            sleep(200);
+            hardware.leftSlide.setPower(0.15);
             sleep(2000);
 
             hardware.boxRotation.setPosition(1);
@@ -198,15 +206,19 @@ public class rb extends OpMode {
             Actions.runBlocking(
                     r2
             );
-            hardware.leftSlide.setPower(0.75);
+            hardware.leftSlide.setPower(0.95);
             //hardware.rightSlide.setPower(0.75);
             sleep(200);
             hardware.boxRotation.setPosition(0.5);
-            sleep(450);
+            sleep(100);
             hardware.leftSlide.setPower(0.15);
             //hardware.rightSlide.setPower(0);
             sleep(500);
             hardware.door.setPosition(0);
+            sleep(200);
+            hardware.leftSlide.setPower(0.95);
+            sleep(200);
+            hardware.leftSlide.setPower(0.15);
             sleep(2000);
 
             hardware.boxRotation.setPosition(1);

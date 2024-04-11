@@ -144,11 +144,15 @@ public class bb extends OpMode {
             //hardware.rightSlide.setPower(0.75);
             sleep(200);
             hardware.boxRotation.setPosition(0.5);
-            sleep(300);
+            sleep(100);
             hardware.leftSlide.setPower(0.15);
             //hardware.rightSlide.setPower(0);
             sleep(500);
             hardware.door.setPosition(0);
+            sleep(200);
+            hardware.leftSlide.setPower(0.95);
+            sleep(200);
+            hardware.leftSlide.setPower(0.15);
             sleep(2000);
 
             hardware.boxRotation.setPosition(1);
@@ -173,12 +177,16 @@ public class bb extends OpMode {
             hardware.leftSlide.setPower(0.95);
             //hardware.rightSlide.setPower(0.75);
             sleep(200);
-            hardware.boxRotation.setPosition(.5);
-            sleep(300);
+            hardware.boxRotation.setPosition(0.5);
+            sleep(100);
             hardware.leftSlide.setPower(0.15);
             //hardware.rightSlide.setPower(0);
             sleep(500);
             hardware.door.setPosition(0);
+            sleep(200);
+            hardware.leftSlide.setPower(0.95);
+            sleep(200);
+            hardware.leftSlide.setPower(0.15);
             sleep(2000);
 
             hardware.boxRotation.setPosition(1);
@@ -203,11 +211,15 @@ public class bb extends OpMode {
             //hardware.rightSlide.setPower(0.75);
             sleep(200);
             hardware.boxRotation.setPosition(0.5);
-            sleep(300);
+            sleep(100);
             hardware.leftSlide.setPower(0.15);
             //hardware.rightSlide.setPower(0);
             sleep(500);
             hardware.door.setPosition(0);
+            sleep(200);
+            hardware.leftSlide.setPower(0.95);
+            sleep(200);
+            hardware.leftSlide.setPower(0.15);
             sleep(2000);
 
             hardware.boxRotation.setPosition(1);
