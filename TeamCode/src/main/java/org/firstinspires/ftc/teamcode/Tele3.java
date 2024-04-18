@@ -35,7 +35,7 @@ public class Tele3 extends LinearOpMode {
 
     public void runOpMode() {
 
-        /* init */ {
+        /* init */
             telemetry.addData("Status", "Initialized");
 
             hardware = new Hardware(hardwareMap);
@@ -44,7 +44,7 @@ public class Tele3 extends LinearOpMode {
             hardware.rightRear.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
             hardware.rightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
             hardware.leftRear.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
-        }
+
 
         time = 0;
 
@@ -98,7 +98,7 @@ public class Tele3 extends LinearOpMode {
                 hardware.door.setPosition(0);
                 hardware.leftSlide.setPower(-1);
                 //hardware.rightSlide.setPower(-0.75);
-                hardware.boxRotation.setPosition(1);
+                hardware.boxRotation.setPosition(hardware.INTAKE_ANGLE);
                 hardware.intake.setPower(1);
                 armpos = "down";
             }
@@ -115,7 +115,7 @@ public class Tele3 extends LinearOpMode {
             if (armdelay.time(TimeUnit.MILLISECONDS) > 500){
                 CanMove = true;
                 if (armpos == "up") {
-                    hardware.boxRotation.setPosition(0.5);
+                    hardware.boxRotation.setPosition(hardware.DROP_ANGLE);
                 }
             }
 
@@ -192,6 +192,7 @@ public class Tele3 extends LinearOpMode {
             time = myStopwatch.time(TimeUnit.SECONDS);
 
             hardware.setLEDs(RevBlinkinLedDriver.BlinkinPattern.BLACK);
+            telemetry.addData("color", hardware.blinkinLedDriver.getConnectionInfo());
             if ((time >= 105) && (time <= 110)) {
                 hardware.setLEDs(RevBlinkinLedDriver.BlinkinPattern.RED_ORANGE);
             }
@@ -201,9 +202,9 @@ public class Tele3 extends LinearOpMode {
             if ((time >= 115) && (time <= 120)) {
                 hardware.setLEDs(RevBlinkinLedDriver.BlinkinPattern.STROBE_RED);
             }
-            if ((hardware.bottomSlot.getDistance(DistanceUnit.CM) <= 3.5) && time <= 120) {
-                hardware.setLEDs(RevBlinkinLedDriver.BlinkinPattern.RED);
-            }
+//            if ((hardware.bottomSlot.getDistance(DistanceUnit.CM) <= 3.5) && time <= 120) {
+//                hardware.setLEDs(RevBlinkinLedDriver.BlinkinPattern.RED);
+//            }
 
             telemetry.addData("Stopwatch timer: ", myStopwatch.time(TimeUnit.SECONDS));
 //            telemetry.addData("arm delay timer: ", armdelay.time(TimeUnit.SECONDS));

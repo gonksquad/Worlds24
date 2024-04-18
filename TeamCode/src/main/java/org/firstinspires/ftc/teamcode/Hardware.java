@@ -35,8 +35,11 @@ public class Hardware {
 
     public IMU imu;
 
-     RevBlinkinLedDriver blinkinLedDriver;
-     RevBlinkinLedDriver.BlinkinPattern black;
+    public RevBlinkinLedDriver blinkinLedDriver;
+    public RevBlinkinLedDriver.BlinkinPattern black;
+    public double DROP_ANGLE;
+    public double INTAKE_ANGLE;
+
 
     public Hardware(HardwareMap hardwareMap) {
          blinkinLedDriver = hardwareMap.get(RevBlinkinLedDriver.class, "blinkin");
@@ -78,6 +81,9 @@ public class Hardware {
          bottomSlot = hardwareMap.get(RevColorSensorV3.class, "I2C2");
         // distance = hardwareMap.get(Rev2mDistanceSensor.class, "I2C1");
          topSlot = hardwareMap.get(RevColorSensorV3.class, "I2C1");
+
+         INTAKE_ANGLE = 1;
+         DROP_ANGLE = 0.4;
     }
 
      public void setLEDs(RevBlinkinLedDriver.BlinkinPattern pattern) {

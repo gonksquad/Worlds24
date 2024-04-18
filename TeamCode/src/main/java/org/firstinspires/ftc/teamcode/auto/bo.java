@@ -75,14 +75,14 @@ public class bo extends OpMode {
         Hardware hardware = new Hardware(hardwareMap);
         MecanumDrive drive = new MecanumDrive(hardwareMap, new Pose2d(-36, 60, Math.toRadians(270)));
 
-        Pose2d pose2 = new Pose2d(47, 31, Math.toRadians(0));
+        Pose2d pose2 = new Pose2d(50, 31, Math.toRadians(0));
         Pose2d pose1 = new Pose2d(-36, 31, Math.toRadians(180));
 
         Pose2d pose1r = new Pose2d(-36, 34, Math.toRadians(0));
-        Pose2d pose2r = new Pose2d(48, 35, Math.toRadians(180));
+        Pose2d pose2r = new Pose2d(50, 35, Math.toRadians(180));
 
         Pose2d pose1c = new Pose2d(-32, 34, Math.toRadians(270));
-        Pose2d pose2c = new Pose2d(47.5, 28, Math.toRadians(180));
+        Pose2d pose2c = new Pose2d(50, 28, Math.toRadians(180));
 
         r1 = drive.actionBuilder(drive.pose)
                 .splineTo(new Vector2d(-40, 31), Math.toRadians(180))
@@ -94,7 +94,7 @@ public class bo extends OpMode {
                 .strafeTo(new Vector2d(-33.9, 11))
                 .splineTo(new Vector2d(-12,11), Math.toRadians(0))
                 .splineTo(new Vector2d(24,11), Math.toRadians(0))
-                .splineTo(new Vector2d(48,32), Math.toRadians(0))
+                .splineTo(new Vector2d(52,32), Math.toRadians(0))
                 .build();
 
         r3 = drive.actionBuilder(pose2)
@@ -118,7 +118,7 @@ public class bo extends OpMode {
                 .splineTo(new Vector2d(-12,10), Math.toRadians(0))
                 .splineTo(new Vector2d(30,10), Math.toRadians(0))
                 .splineTo(new Vector2d(40,36), Math.toRadians(180))
-                .strafeTo(new Vector2d(49, 37))
+                .strafeTo(new Vector2d(52, 37))
                 .build();
 
         l3 = drive.actionBuilder(pose2r)
@@ -137,7 +137,7 @@ public class bo extends OpMode {
                 .splineTo(new Vector2d(-12,12), Math.toRadians(0))
                 .splineTo(new Vector2d(30,12), Math.toRadians(0))
                 .splineTo(new Vector2d(40,36), Math.toRadians(180))
-                .strafeTo(new Vector2d(48, 28))
+                .strafeTo(new Vector2d(52, 28))
                 .build();
 
         c3 = drive.actionBuilder(pose2c)
@@ -156,7 +156,7 @@ public class bo extends OpMode {
             hardware.leftSlide.setPower(0.95);
             //hardware.rightSlide.setPower(0.75);
             sleep(200);
-            hardware.boxRotation.setPosition(0.5);
+            hardware.boxRotation.setPosition(hardware.DROP_ANGLE);
             sleep(100);
             hardware.leftSlide.setPower(0.15);
             //hardware.rightSlide.setPower(0);
@@ -168,7 +168,7 @@ public class bo extends OpMode {
             hardware.leftSlide.setPower(0.15);
             sleep(2000);
 
-            hardware.boxRotation.setPosition(1);
+            hardware.boxRotation.setPosition(hardware.INTAKE_ANGLE);
             sleep(1000);
             hardware.leftSlide.setPower(-0.25);
             //hardware.rightSlide.setPower(-0.25);
@@ -190,7 +190,7 @@ public class bo extends OpMode {
             hardware.leftSlide.setPower(0.95);
             //hardware.rightSlide.setPower(0.75);
             sleep(200);
-            hardware.boxRotation.setPosition(0.5);
+            hardware.boxRotation.setPosition(hardware.DROP_ANGLE);
             sleep(100);
             hardware.leftSlide.setPower(0.15);
             //hardware.rightSlide.setPower(0);
@@ -202,7 +202,7 @@ public class bo extends OpMode {
             hardware.leftSlide.setPower(0.15);
             sleep(2000);
 
-            hardware.boxRotation.setPosition(1);
+            hardware.boxRotation.setPosition(hardware.INTAKE_ANGLE);
             sleep(1000);
             hardware.leftSlide.setPower(-0.25);
             //hardware.rightSlide.setPower(-0.25);
@@ -223,7 +223,7 @@ public class bo extends OpMode {
             hardware.leftSlide.setPower(0.95);
             //hardware.rightSlide.setPower(0.75);
             sleep(200);
-            hardware.boxRotation.setPosition(0.5);
+            hardware.boxRotation.setPosition(hardware.DROP_ANGLE);
             sleep(100);
             hardware.leftSlide.setPower(0.15);
             //hardware.rightSlide.setPower(0);
@@ -235,7 +235,7 @@ public class bo extends OpMode {
             hardware.leftSlide.setPower(0.15);
             sleep(2000);
 
-            hardware.boxRotation.setPosition(1);
+            hardware.boxRotation.setPosition(hardware.INTAKE_ANGLE);
             sleep(1000);
             hardware.leftSlide.setPower(-0.25);
             //hardware.rightSlide.setPower(-0.25);

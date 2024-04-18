@@ -120,7 +120,7 @@ public class rb extends OpMode {
                 .build();
 
         c2 = drive.actionBuilder(pose1c)
-                .strafeTo(new Vector2d(49, -38))
+                .strafeTo(new Vector2d(50, -36))
                 .turn(Math.toRadians(90))
                 .build();
 
@@ -142,7 +142,7 @@ public class rb extends OpMode {
             hardware.leftSlide.setPower(0.95);
             //hardware.rightSlide.setPower(0.75);
             sleep(200);
-            hardware.boxRotation.setPosition(0.5);
+            hardware.boxRotation.setPosition(hardware.DROP_ANGLE);
             sleep(100);
             hardware.leftSlide.setPower(0.15);
             //hardware.rightSlide.setPower(0);
@@ -154,7 +154,7 @@ public class rb extends OpMode {
             hardware.leftSlide.setPower(0.15);
             sleep(2000);
 
-            hardware.boxRotation.setPosition(1);
+            hardware.boxRotation.setPosition(hardware.INTAKE_ANGLE);
             sleep(1000);
             hardware.leftSlide.setPower(-0.25);
             //hardware.rightSlide.setPower(-0.25);
@@ -175,9 +175,9 @@ public class rb extends OpMode {
             );
             hardware.leftSlide.setPower(0.95);
             //hardware.rightSlide.setPower(0.75);
-            sleep(200);
-            hardware.boxRotation.setPosition(0.5);
-            sleep(100);
+            sleep(300);
+            hardware.boxRotation.setPosition(hardware.DROP_ANGLE);
+            sleep(150);
             hardware.leftSlide.setPower(0.15);
             //hardware.rightSlide.setPower(0);
             sleep(500);
@@ -188,7 +188,7 @@ public class rb extends OpMode {
             hardware.leftSlide.setPower(0.15);
             sleep(2000);
 
-            hardware.boxRotation.setPosition(1);
+            hardware.boxRotation.setPosition(hardware.INTAKE_ANGLE);
             sleep(1000);
             hardware.leftSlide.setPower(-0.25);
             //hardware.rightSlide.setPower(-0.25);
@@ -209,7 +209,7 @@ public class rb extends OpMode {
             hardware.leftSlide.setPower(0.95);
             //hardware.rightSlide.setPower(0.75);
             sleep(200);
-            hardware.boxRotation.setPosition(0.5);
+            hardware.boxRotation.setPosition(hardware.DROP_ANGLE);
             sleep(100);
             hardware.leftSlide.setPower(0.15);
             //hardware.rightSlide.setPower(0);
@@ -221,7 +221,7 @@ public class rb extends OpMode {
             hardware.leftSlide.setPower(0.15);
             sleep(2000);
 
-            hardware.boxRotation.setPosition(1);
+            hardware.boxRotation.setPosition(hardware.INTAKE_ANGLE);
             sleep(1000);
             hardware.leftSlide.setPower(-0.25);
             //hardware.rightSlide.setPower(-0.25);
