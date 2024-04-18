@@ -143,13 +143,13 @@ public class ro extends OpMode {
         c3 = drive.actionBuilder(pose2c)
                 .build();
 
-        sleep(1000);
+        sleep(2000);
 
         if (Objects.equals(position, "left")) {
             Actions.runBlocking(
                     l1
             );
-            hardware.intake.setPower(.60);
+            hardware.intake.setPower(.70);
             sleep(3000);
             hardware.intake.setPower(0);
             Actions.runBlocking(
@@ -183,7 +183,7 @@ public class ro extends OpMode {
             Actions.runBlocking(
                     c1
             );
-            hardware.intake.setPower(.60);
+            hardware.intake.setPower(.70);
             sleep(3000);
             hardware.intake.setPower(0);
             Actions.runBlocking(
@@ -216,7 +216,7 @@ public class ro extends OpMode {
             Actions.runBlocking(
                     r1
             );
-            hardware.intake.setPower(.60);
+            hardware.intake.setPower(.70);
             sleep(3000);
             hardware.intake.setPower(0);
             Actions.runBlocking(
