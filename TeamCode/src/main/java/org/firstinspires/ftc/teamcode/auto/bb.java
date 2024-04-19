@@ -164,9 +164,9 @@ public class bb extends OpMode {
             hardware.leftSlide.setPower(0.95);
             sleep(200);
             hardware.leftSlide.setPower(0.15);
-
+            sleep(250);
             hardware.boxRotation.setPosition(hardware.INTAKE_ANGLE);
-            sleep(1000);
+            //sleep(1000);
             hardware.leftSlide.setPower(-0.25);
             //hardware.rightSlide.setPower(-0.25);
 
@@ -196,7 +196,7 @@ public class bb extends OpMode {
             //hardware.rightSlide.setPower(0);
             sleep(400);
             hardware.leftSlide.setPower(0.15);
-            sleep(00);
+            sleep(100);
             //TODO: between todos is new below is old
 //            hardware.boxRotation.setPosition(hardware.DROP_ANGLE);
 //            sleep(100);
@@ -208,9 +208,9 @@ public class bb extends OpMode {
             hardware.leftSlide.setPower(0.95);
             sleep(200);
             hardware.leftSlide.setPower(0.15);
-
+            sleep(250);
             hardware.boxRotation.setPosition(hardware.INTAKE_ANGLE);
-            sleep(1000);
+            //sleep(1000);
             hardware.leftSlide.setPower(-0.25);
             //hardware.rightSlide.setPower(-0.25);
 
@@ -251,9 +251,9 @@ public class bb extends OpMode {
             hardware.leftSlide.setPower(0.95);
             sleep(200);
             hardware.leftSlide.setPower(0.15);
-
+            sleep(250);
             hardware.boxRotation.setPosition(hardware.INTAKE_ANGLE);
-            sleep(1000);
+            //sleep(1000);
             hardware.leftSlide.setPower(-0.25);
             //hardware.rightSlide.setPower(-0.25);
 
