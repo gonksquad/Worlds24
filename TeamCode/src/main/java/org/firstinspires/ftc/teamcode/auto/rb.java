@@ -134,25 +134,35 @@ public class rb extends OpMode {
                     l1
             );
             hardware.intake.setPower(.60);
-            sleep(3000);
+            sleep(1500);
             hardware.intake.setPower(0);
             Actions.runBlocking(
                     l2
             );
             hardware.leftSlide.setPower(0.95);
             //hardware.rightSlide.setPower(0.75);
-            sleep(200);
+            sleep(500); //TODO: was 200
             hardware.boxRotation.setPosition(hardware.DROP_ANGLE);
             sleep(100);
             hardware.leftSlide.setPower(0.15);
+            sleep(100);
+            hardware.leftSlide.setPower(-0.1);
             //hardware.rightSlide.setPower(0);
-            sleep(500);
+            sleep(400);
+            hardware.leftSlide.setPower(0.15);
+            sleep(200);
+            //TODO: between todos is new below is old
+//            hardware.boxRotation.setPosition(hardware.DROP_ANGLE);
+//            sleep(100);
+//            hardware.leftSlide.setPower(0.15);
+//            //hardware.rightSlide.setPower(0);
+//            sleep(500);
             hardware.door.setPosition(0);
             sleep(200);
             hardware.leftSlide.setPower(0.95);
             sleep(200);
             hardware.leftSlide.setPower(0.15);
-            sleep(2000);
+            //sleep(2000);
 
             hardware.boxRotation.setPosition(hardware.INTAKE_ANGLE);
             sleep(1000);
@@ -168,25 +178,35 @@ public class rb extends OpMode {
                     c1
             );
             hardware.intake.setPower(.60);
-            sleep(3000);
+            sleep(1500);
             hardware.intake.setPower(0);
             Actions.runBlocking(
                     c2
             );
             hardware.leftSlide.setPower(0.95);
             //hardware.rightSlide.setPower(0.75);
-            sleep(300);
+            sleep(500); //TODO: was 200
             hardware.boxRotation.setPosition(hardware.DROP_ANGLE);
-            sleep(150);
+            sleep(100);
             hardware.leftSlide.setPower(0.15);
+            sleep(100);
+            hardware.leftSlide.setPower(-0.1);
             //hardware.rightSlide.setPower(0);
-            sleep(500);
+            sleep(400);
+            hardware.leftSlide.setPower(0.15);
+            sleep(200);
+            //TODO: between todos is new below is old
+//            hardware.boxRotation.setPosition(hardware.DROP_ANGLE);
+//            sleep(100);
+//            hardware.leftSlide.setPower(0.15);
+//            //hardware.rightSlide.setPower(0);
+//            sleep(500);
             hardware.door.setPosition(0);
             sleep(200);
             hardware.leftSlide.setPower(0.95);
             sleep(200);
             hardware.leftSlide.setPower(0.15);
-            sleep(2000);
+            //sleep(2000);
 
             hardware.boxRotation.setPosition(hardware.INTAKE_ANGLE);
             sleep(1000);
@@ -201,25 +221,35 @@ public class rb extends OpMode {
                     r1
             );
             hardware.intake.setPower(.60);
-            sleep(3000);
+            sleep(1500);
             hardware.intake.setPower(0);
             Actions.runBlocking(
                     r2
             );
             hardware.leftSlide.setPower(0.95);
             //hardware.rightSlide.setPower(0.75);
-            sleep(200);
+            sleep(500); //TODO: was 200
             hardware.boxRotation.setPosition(hardware.DROP_ANGLE);
             sleep(100);
             hardware.leftSlide.setPower(0.15);
+            sleep(100);
+            hardware.leftSlide.setPower(-0.1);
             //hardware.rightSlide.setPower(0);
-            sleep(500);
+            sleep(400);
+            hardware.leftSlide.setPower(0.15);
+            sleep(200);
+            //TODO: between todos is new below is old
+//            hardware.boxRotation.setPosition(hardware.DROP_ANGLE);
+//            sleep(100);
+//            hardware.leftSlide.setPower(0.15);
+//            //hardware.rightSlide.setPower(0);
+//            sleep(500);
             hardware.door.setPosition(0);
             sleep(200);
             hardware.leftSlide.setPower(0.95);
             sleep(200);
             hardware.leftSlide.setPower(0.15);
-            sleep(2000);
+            //sleep(2000);
 
             hardware.boxRotation.setPosition(hardware.INTAKE_ANGLE);
             sleep(1000);

@@ -94,7 +94,7 @@ public class ro extends OpMode {
                 .strafeTo(new Vector2d(-33.9, -10))
                 .splineTo(new Vector2d(-12,-10), Math.toRadians(0))
                 .splineTo(new Vector2d(24,-10), Math.toRadians(0))
-                .splineTo(new Vector2d(50,-28), Math.toRadians(0))
+                .splineTo(new Vector2d(50,-32), Math.toRadians(0))
                 .build();
 
         l3 = drive.actionBuilder(pose2)
@@ -109,7 +109,7 @@ public class ro extends OpMode {
 //                        .splineTo(new Vector2d(30,-12), Math.toRadians(0))
 //                        .splineTo(new Vector2d(40,-36), Math.toRadians(180))
         r1 = drive.actionBuilder(drive.pose)
-                .splineTo(new Vector2d(-34, -36), Math.toRadians(0))
+                .splineTo(new Vector2d(-34, -34.5), Math.toRadians(0))
                 .build();
 
         r2 = drive.actionBuilder(pose1r)
@@ -118,7 +118,7 @@ public class ro extends OpMode {
                 .splineTo(new Vector2d(-12,-10), Math.toRadians(0))
                 .splineTo(new Vector2d(30,-10), Math.toRadians(0))
                 .splineTo(new Vector2d(40,-36), Math.toRadians(180))
-                .strafeTo(new Vector2d(50, -36))
+                .strafeTo(new Vector2d(51, -35))
                 .build();
 
         r3 = drive.actionBuilder(pose2r)
@@ -137,13 +137,13 @@ public class ro extends OpMode {
                 .splineTo(new Vector2d(-12,-12), Math.toRadians(0))
                 .splineTo(new Vector2d(30,-12), Math.toRadians(0))
                 .splineTo(new Vector2d(40,-36), Math.toRadians(180))
-                .strafeTo(new Vector2d(51, -31))
+                .strafeTo(new Vector2d(49, -30))
                 .build();
 
         c3 = drive.actionBuilder(pose2c)
                 .build();
 
-        sleep(2000);
+        sleep(7000);
 
         if (Objects.equals(position, "left")) {
             Actions.runBlocking(
@@ -157,12 +157,22 @@ public class ro extends OpMode {
             );
             hardware.leftSlide.setPower(0.95);
             //hardware.rightSlide.setPower(0.75);
-            sleep(200);
+            sleep(500); //TODO: was 200
             hardware.boxRotation.setPosition(hardware.DROP_ANGLE);
             sleep(100);
             hardware.leftSlide.setPower(0.15);
+            sleep(100);
+            hardware.leftSlide.setPower(-0.1);
             //hardware.rightSlide.setPower(0);
-            sleep(500);
+            sleep(200);
+            hardware.leftSlide.setPower(0.15);
+            sleep(200);
+            //TODO: between todos is new below is old
+//            hardware.boxRotation.setPosition(hardware.DROP_ANGLE);
+//            sleep(100);
+//            hardware.leftSlide.setPower(0.15);
+//            //hardware.rightSlide.setPower(0);
+//            sleep(500);
             hardware.door.setPosition(0);
             sleep(200);
             hardware.leftSlide.setPower(0.95);
@@ -191,12 +201,22 @@ public class ro extends OpMode {
             );
             hardware.leftSlide.setPower(0.95);
             //hardware.rightSlide.setPower(0.75);
-            sleep(200);
+            sleep(500); //TODO: was 200
             hardware.boxRotation.setPosition(hardware.DROP_ANGLE);
             sleep(100);
             hardware.leftSlide.setPower(0.15);
+            sleep(100);
+            hardware.leftSlide.setPower(-0.1);
             //hardware.rightSlide.setPower(0);
-            sleep(500);
+            sleep(200);
+            hardware.leftSlide.setPower(0.15);
+            sleep(200);
+            //TODO: between todos is new below is old
+//            hardware.boxRotation.setPosition(hardware.DROP_ANGLE);
+//            sleep(100);
+//            hardware.leftSlide.setPower(0.15);
+//            //hardware.rightSlide.setPower(0);
+//            sleep(500);
             hardware.door.setPosition(0);
             sleep(200);
             hardware.leftSlide.setPower(0.95);
@@ -224,12 +244,22 @@ public class ro extends OpMode {
             );
             hardware.leftSlide.setPower(0.95);
             //hardware.rightSlide.setPower(0.75);
-            sleep(200);
+            sleep(500); //TODO: was 200
             hardware.boxRotation.setPosition(hardware.DROP_ANGLE);
             sleep(100);
             hardware.leftSlide.setPower(0.15);
+            sleep(100);
+            hardware.leftSlide.setPower(-0.1);
             //hardware.rightSlide.setPower(0);
-            sleep(500);
+            sleep(200);
+            hardware.leftSlide.setPower(0.15);
+            sleep(200);
+            //TODO: between todos is new below is old
+//            hardware.boxRotation.setPosition(hardware.DROP_ANGLE);
+//            sleep(100);
+//            hardware.leftSlide.setPower(0.15);
+//            //hardware.rightSlide.setPower(0);
+//            sleep(500);
             hardware.door.setPosition(0);
             sleep(200);
             hardware.leftSlide.setPower(0.95);
