@@ -115,10 +115,12 @@ public class bo extends OpMode {
         l2 = drive.actionBuilder(pose1r)
                 .strafeTo(new Vector2d(-36, 10))
                 .strafeTo(new Vector2d(-35.9, 9))
+                .turnTo(0)
                 .splineTo(new Vector2d(-12,9), Math.toRadians(0))
                 .splineTo(new Vector2d(30,9), Math.toRadians(0))
                 .splineTo(new Vector2d(40,36), Math.toRadians(180))
-                .strafeTo(new Vector2d(52, 35))
+                .turnTo(Math.toRadians(180))
+                .strafeTo(new Vector2d(52, 34))
                 .build();
 
         l3 = drive.actionBuilder(pose2r)
@@ -137,7 +139,7 @@ public class bo extends OpMode {
                 .splineTo(new Vector2d(-12,10), Math.toRadians(0))
                 .splineTo(new Vector2d(30,9), Math.toRadians(0))
                 .splineTo(new Vector2d(40,36), Math.toRadians(180))
-                .strafeTo(new Vector2d(51, 28))
+                .strafeTo(new Vector2d(51, 27))
                 .build();
 
         c3 = drive.actionBuilder(pose2c)
@@ -157,7 +159,7 @@ public class bo extends OpMode {
             );
             hardware.leftSlide.setPower(0.95);
             //hardware.rightSlide.setPower(0.75);
-            sleep(500); //TODO: was 200
+            sleep(450); //TODO: was 200
             hardware.boxRotation.setPosition(hardware.DROP_ANGLE);
             sleep(100);
             hardware.leftSlide.setPower(0.15);
@@ -201,7 +203,7 @@ public class bo extends OpMode {
             );
             hardware.leftSlide.setPower(0.95);
             //hardware.rightSlide.setPower(0.75);
-            sleep(500); //TODO: was 200
+            sleep(450); //TODO: was 200
             hardware.boxRotation.setPosition(hardware.DROP_ANGLE);
             sleep(100);
             hardware.leftSlide.setPower(0.15);
@@ -244,7 +246,7 @@ public class bo extends OpMode {
             );
             hardware.leftSlide.setPower(0.95);
             //hardware.rightSlide.setPower(0.75);
-            sleep(500); //TODO: was 200
+            sleep(450); //TODO: was 200
             hardware.boxRotation.setPosition(hardware.DROP_ANGLE);
             sleep(100);
             hardware.leftSlide.setPower(0.15);

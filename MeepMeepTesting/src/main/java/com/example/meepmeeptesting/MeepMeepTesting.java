@@ -18,7 +18,7 @@ public class MeepMeepTesting {
                 .setConstraints(60, 60, Math.toRadians(180), Math.toRadians(180), 15)
                 .build();
 
-        myBot.runAction(myBot.getDrive().actionBuilder(new Pose2d(-36, 31, Math.toRadians(180)))
+        myBot.runAction(myBot.getDrive().actionBuilder(new Pose2d(0, 0, Math.toRadians(0)))
 
 
                 //Red On-stage Center  --  StartPose (-36, -60, 90 deg)
@@ -145,22 +145,31 @@ public class MeepMeepTesting {
 //                .strafeTo(new Vector2d(46, -43))
 //                .strafeTo(new Vector2d(45, -60))
 //                .strafeTo(new Vector2d(60, -60))
-                .strafeTo(new Vector2d(-34, 10))
-                .strafeTo(new Vector2d(-33.9, 10))
-                .splineTo(new Vector2d(-12,10), Math.toRadians(0))
-                .splineTo(new Vector2d(24,10), Math.toRadians(0))
-                .splineTo(new Vector2d(45,30), Math.toRadians(0))
+//                .strafeTo(new Vector2d(-34, 10))
+//                .strafeTo(new Vector2d(-33.9, 10))
+//                .splineTo(new Vector2d(-12,10), Math.toRadians(0))
+//                .splineTo(new Vector2d(24,10), Math.toRadians(0))
+//                .splineTo(new Vector2d(45,30), Math.toRadians(0))
+//                .splineTo(new Vector2d(-36, 32.5), Math.toRadians(0))
+//                .strafeTo(new Vector2d(-36, 10))
+//                .strafeTo(new Vector2d(-35.9, 9))
+//                        .turnTo(0)
+//                .splineTo(new Vector2d(-12,9), Math.toRadians(0))
+//                .splineTo(new Vector2d(30,9), Math.toRadians(0))
+//                .splineTo(new Vector2d(40,36), Math.toRadians(180))
+//                .turnTo(Math.toRadians(180))
+//                .strafeTo(new Vector2d(52, 35))
 
 
                 //TEST TRAJECTORY -- just for my sanity, hehe... (Start pose at 0 0 0)
-//                        .splineTo(new Vector2d(15,15), 90)
-//                        .splineTo(new Vector2d(-15,15), 180)
-//                        .splineTo(new Vector2d(-15,-15), 270)
-//                        .splineTo(new Vector2d(15,-15), 0)
-//                        .splineTo(new Vector2d(30,30), 90)
-//                        .splineTo(new Vector2d(-30,30), 180)
-//                        .splineTo(new Vector2d(-30,-30), 270)
-//                        .splineTo(new Vector2d(30,-30), 0)
+                        .splineTo(new Vector2d(15,15), 90)
+                        .splineTo(new Vector2d(-15,15), 180)
+                        .splineTo(new Vector2d(-15,-15), 270)
+                        .splineTo(new Vector2d(15,-15), 0)
+                        .splineTo(new Vector2d(30,30), 90)
+                        .splineTo(new Vector2d(-30,30), 180)
+                        .splineTo(new Vector2d(-30,-30), 270)
+                        .splineTo(new Vector2d(30,-30), 0)
 
 
                 .build());
