@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 
 @TeleOp
 
-public class Tele3 extends LinearOpMode {
+public class DannyTeleop extends LinearOpMode {
     Hardware hardware;
     double speed = 1;
     Ploop looper;
@@ -36,14 +36,14 @@ public class Tele3 extends LinearOpMode {
     public void runOpMode() {
 
         /* init */
-            telemetry.addData("Status", "Initialized");
+        telemetry.addData("Status", "Initialized");
 
-            hardware = new Hardware(hardwareMap);
+        hardware = new Hardware(hardwareMap);
 
-            hardware.leftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
-            hardware.rightRear.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
-            hardware.rightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
-            hardware.leftRear.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
+        hardware.leftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
+        hardware.rightRear.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
+        hardware.rightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
+        hardware.leftRear.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
 
 
         time = 0;
@@ -80,7 +80,7 @@ public class Tele3 extends LinearOpMode {
 
             /* Speed Control */
             {
-                speed = 1;//(gamepad1.right_trigger * 0.7) + 0.3;
+                speed = (gamepad1.right_trigger * 0.7) + 0.3;
             }
 
             //debugging
@@ -94,7 +94,7 @@ public class Tele3 extends LinearOpMode {
 //            }
 
             // Arm up intake sequence
-            if (gamepad1.a) {
+            if (gamepad2.a) {
                 hardware.door.setPosition(0);
                 hardware.leftSlide.setPower(-1);
                 //hardware.rightSlide.setPower(-0.75);
@@ -103,7 +103,7 @@ public class Tele3 extends LinearOpMode {
                 armpos = "down";
             }
 
-            if (gamepad1.b) {
+            if (gamepad2.b) {
                 hardware.door.setPosition(0.25);
                 hardware.intake.setPower(0);
                 hardware.leftSlide.setPower(1);
@@ -122,11 +122,11 @@ public class Tele3 extends LinearOpMode {
 
             telemetry.addData("timeinms", (armdelay.time(TimeUnit.MILLISECONDS)));
 
-            if (gamepad1.x) {
+            if (gamepad2.x) {
                 hardware.door.setPosition(0);
             }
 
-            if (gamepad2.b) {
+            if (gamepad1.b) {
                 hardware.intake.setPower(-1);
             }
             //set powers to pull up hooks
@@ -137,10 +137,10 @@ public class Tele3 extends LinearOpMode {
             telemetry.addData("speed", speed);
 
             if (CanMove) {
-                if (gamepad1.right_trigger != 0) {
+                if (gamepad2.right_trigger != 0) {
                     hardware.leftSlide.setPower(0.75);
                     //hardware.rightSlide.setPower(0.5);
-                } else if (gamepad1.left_trigger != 0) {
+                } else if (gamepad2.left_trigger != 0) {
                     hardware.leftSlide.setPower(-0.5);
                     //hardware.rightSlide.setPower(-0.35);
                 } else {
